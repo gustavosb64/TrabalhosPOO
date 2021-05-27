@@ -5,4 +5,4 @@ run:
 	./main
 
 debug:
-	valgrind --leak-check=full --show-leaks-kind=all ./main
+	valgrind --leak-check=full --show-leak-kinds=all ./main

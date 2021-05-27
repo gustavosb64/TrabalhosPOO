@@ -16,40 +16,60 @@ class NumComplexo{
             imaginario = iImaginario;
         };
 
-        NumComplexo* Soma(NumComplexo* iC1, NumComplexo* iC2){
+        void Soma(NumComplexo* Z){
             double rRes, rImag;
-            rRes = iC1->real + iC2->real; 
-            rImag = iC1->imaginario + iC2->imaginario; 
+            rRes = real + Z->real; 
+            rImag = imaginario + Z->imaginario; 
 
-            NumComplexo *res = new NumComplexo(rRes, rImag);
-            return res;
+            real = rRes;
+            imaginario = rImag;
+            return;
         };
 
-        NumComplexo* Subtracao(NumComplexo* iC1, NumComplexo* iC2){
+        void Subtracao(NumComplexo* Z){
             double rRes, rImag;
-            rRes = iC1->real - iC2->real; 
-            rImag = iC1->imaginario - iC2->imaginario; 
+            rRes = real - Z->real; 
+            rImag = imaginario - Z->imaginario; 
 
-            NumComplexo *res = new NumComplexo(rRes, rImag);
-            return res;
+            real = rRes;
+            imaginario = rImag;
+            return;
         };
 
-        NumComplexo* Multiplicao(NumComplexo* iC1, NumComplexo* iC2){
+        void Multiplicacao(NumComplexo* Z){
             double rRes, rImag;
-            rRes = (iC1->real)*(iC2->real) - (iC1->imaginario)*(iC2->imaginario);
-            rImag = (iC1->real)*(iC2->imaginario) - (iC1->imaginario)*(iC2->real);
+            rRes = (real)*(Z->real) - (imaginario)*(Z->imaginario);
+            rImag = (real)*(Z->imaginario) - (imaginario)*(Z->real);
 
-            NumComplexo *res = new NumComplexo(rRes, rImag);
-            return res;
+            real = rRes;
+            imaginario = rImag;
+            return;
         };
 
-        double Modulo(NumComplexo* iC){
+        double Modulo(){
             double rRes, rImag, res;
 
-            rRes = pow((iC->real),2);
-            rImag = pow((iC->imaginario),2);
+            rRes = pow((real),2);
+            rImag = pow((imaginario),2);
 
             res = sqrt(rRes + rImag);
             return res;
+        };
+
+        double getReal(){
+            return real;
+        };
+
+        double getImaginario(){
+            return imaginario;
+        };
+
+        void printNum(){
+            if (imaginario >= 0)  
+                cout << real << "+" << imaginario << "i" << endl;
+            else 
+                cout << real << imaginario << "i" << endl;
+
+            return;
         };
 };
