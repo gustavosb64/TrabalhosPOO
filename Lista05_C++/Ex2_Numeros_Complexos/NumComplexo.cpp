@@ -8,51 +8,45 @@ using namespace std;
 class NumComplexo{
     private:
         double real;
-        double imaginario;
+        double imag;
     
     public:
         NumComplexo(double iReal, double iImaginario){
             real = iReal;
-            imaginario = iImaginario;
+            imag = iImaginario;
         };
 
         void Soma(NumComplexo* Z){
-            double rRes, rImag;
-            rRes = real + Z->real; 
-            rImag = imaginario + Z->imaginario; 
+            this->real += Z->real; 
+            this->imag += Z->imag; 
 
-            real = rRes;
-            imaginario = rImag;
             return;
         };
 
         void Subtracao(NumComplexo* Z){
-            double rRes, rImag;
-            rRes = real - Z->real; 
-            rImag = imaginario - Z->imaginario; 
+            this->real -= Z->real; 
+            this->imag -= Z->imag; 
 
-            real = rRes;
-            imaginario = rImag;
             return;
         };
 
         void Multiplicacao(NumComplexo* Z){
-            double rRes, rImag;
-            rRes = (real)*(Z->real) - (imaginario)*(Z->imaginario);
-            rImag = (real)*(Z->imaginario) - (imaginario)*(Z->real);
+            double rReal, rImag;
+            rReal = (real)*(Z->real) - (imag)*(Z->imag);
+            rImag = (real)*(Z->imag) + (imag)*(Z->real);
 
-            real = rRes;
-            imaginario = rImag;
+            real = rReal;
+            imag = rImag;
             return;
         };
 
         double Modulo(){
-            double rRes, rImag, res;
+            double rReal, rImag, res;
 
-            rRes = pow((real),2);
-            rImag = pow((imaginario),2);
+            rReal = pow(real,2);
+            rImag = pow(imag,2);
 
-            res = sqrt(rRes + rImag);
+            res = sqrt(rReal + rImag);
             return res;
         };
 
@@ -60,15 +54,15 @@ class NumComplexo{
             return real;
         };
 
-        double getImaginario(){
-            return imaginario;
+        double getImag(){
+            return imag;
         };
 
         void printNum(){
-            if (imaginario >= 0)  
-                cout << real << "+" << imaginario << "i" << endl;
+            if (imag >= 0)  
+                cout << real << "+" << imag << "i" << endl;
             else 
-                cout << real << imaginario << "i" << endl;
+                cout << real << imag << "i" << endl;
 
             return;
         };
