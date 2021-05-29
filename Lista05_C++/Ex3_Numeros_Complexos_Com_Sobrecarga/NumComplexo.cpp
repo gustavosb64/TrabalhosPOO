@@ -16,40 +16,26 @@ class NumComplexo{
             imag = iImaginario;
         };
 
-        NumComplexo* operator+(NumComplexo *Z){
-            int r, i;
-            r = real + Z->real;
-            i = imag + Z->imag;
+        NumComplexo operator+(NumComplexo Z){
+            double r = real + Z.real;
+            double i = imag + Z.imag;
         
-            NumComplexo *res = new NumComplexo(r,i);
-
-            return res;
+            return NumComplexo(r,i);
         }
-        /*
-        void Soma(NumComplexo* Z){
-            this->real += Z->real; 
-            this->imag += Z->imag; 
 
-            return;
-        };
-        */
+        NumComplexo operator-(NumComplexo Z){
+            double r = real - Z.real;
+            double i = imag - Z.imag;
+        
+            return NumComplexo(r,i);
+        }
 
-        void Subtracao(NumComplexo* Z){
-            this->real -= Z->real; 
-            this->imag -= Z->imag; 
-
-            return;
-        };
-
-        void Multiplicacao(NumComplexo* Z){
-            double rReal, rImag;
-            rReal = (real)*(Z->real) - (imag)*(Z->imag);
-            rImag = (real)*(Z->imag) + (imag)*(Z->real);
-
-            real = rReal;
-            imag = rImag;
-            return;
-        };
+        NumComplexo operator*(NumComplexo Z){
+            double r = (real)*(Z.real) - (imag)*(Z.imag);
+            double i = (real)*(Z.imag) + (imag)*(Z.real); 
+        
+            return NumComplexo(r,i);
+        }
 
         double Modulo(){
             double rReal, rImag, res;
