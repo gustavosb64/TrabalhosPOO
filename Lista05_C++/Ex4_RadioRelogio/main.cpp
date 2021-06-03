@@ -36,6 +36,8 @@ int main(void) {
     dispositivo->liga();
     dispositivo->desliga();
 
+    delete radio;
+
     return 0;
 }
 
