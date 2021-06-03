@@ -11,6 +11,8 @@ class NumComplexo{
         double imag;
     
     public:
+        NumComplexo(){};
+
         NumComplexo(double iReal, double iImaginario){
             real = iReal;
             imag = iImaginario;
