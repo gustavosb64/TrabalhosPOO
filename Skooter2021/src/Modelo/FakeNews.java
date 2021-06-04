@@ -1,17 +1,18 @@
 package Modelo;
 
-import Auxiliar.Desenhador;
-import Controler.Tela;
-import java.awt.Graphics;
 import java.io.Serializable;
+
+import Auxiliar.Desenhador;
 
 /**
  *
  * @author junio
  */
-public class FakeNews extends Elemento implements Serializable{
+public class FakeNews extends Animado implements Serializable{
             
-    public FakeNews(String sNomeImagePNG) {
+	private static final long serialVersionUID = 1L;
+
+	public FakeNews(String sNomeImagePNG) {
         super(sNomeImagePNG);
         this.bMortal = true;
     }
@@ -22,4 +23,10 @@ public class FakeNews extends Elemento implements Serializable{
         if(!this.moveUp())
             Desenhador.getTelaDoJogo().removeElemento(this);
     }
+
+	@Override
+	public boolean move() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

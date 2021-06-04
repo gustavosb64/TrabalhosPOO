@@ -1,9 +1,12 @@
 package Controler;
 
+import java.util.ArrayList;
+
+import Auxiliar.Posicao;
+import Modelo.BlocoAnimado;
 import Modelo.Elemento;
 import Modelo.Hero;
-import Auxiliar.Posicao;
-import java.util.ArrayList;
+import Modelo.Robo;
 
 /**
  *
@@ -24,8 +27,12 @@ public class ControleDeJogo {
             /*Verifica se o heroi se sobrepoe ao i-ésimo elemento*/
             if(hHero.getPosicao().estaNaMesmaPosicao(eTemp.getPosicao()))
                 /*Nem todos os elementos podem ser transpostos pelo heroi*/
-                if(eTemp.isbTransponivel())
-                    e.remove(eTemp);
+                if(eTemp instanceof BlocoAnimado) 
+                    ((BlocoAnimado) eTemp).move(hHero.getPosicao());
+            	
+            if(eTemp instanceof Robo)
+            	((Robo) eTemp).move();
+            	
         }
     }
     public boolean ehPosicaoValida(ArrayList<Elemento> e, Posicao p){

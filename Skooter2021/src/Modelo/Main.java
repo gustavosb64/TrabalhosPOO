@@ -2,10 +2,6 @@ package Modelo;
 
 import Controler.Tela;
 
-/**
- *
- * @author junio
- */
 public class Main {
 
     /**

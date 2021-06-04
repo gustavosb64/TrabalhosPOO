@@ -1,13 +1,27 @@
 package Controler;
 
-import Modelo.*;
-import Auxiliar.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.util.*;
-import java.util.logging.*;
-import java.util.zip.*;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import Auxiliar.Consts;
+import Auxiliar.Desenhador;
+import Modelo.BlocoAnimado;
+import Modelo.BlocoEstatico;
+import Modelo.Caveira;
+import Modelo.CoronaVirus;
+import Modelo.Elemento;
+import Modelo.Hero;
 /**
  *
  * @author junio
@@ -41,6 +55,14 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(0, 7);
         this.addElemento(hHero);
+        
+        BlocoEstatico bloco = new BlocoEstatico("bloco_intransponivel_estatico.png");
+        bloco.setPosicao(3, 5);
+        this.addElemento(bloco);
+        
+        BlocoAnimado bloco2 = new BlocoAnimado("bloco_intransponivel_estatico.png");
+        bloco2.setPosicao(4, 3);
+        this.addElemento(bloco2);
         
         CoronaVirus cTeste = new CoronaVirus("robo_azul.png");
         cTeste.setPosicao(5, 5);

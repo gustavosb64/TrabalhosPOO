@@ -59,4 +59,13 @@ public class Posicao implements Serializable{
     public boolean moveLeft(){
         return this.setPosicao(this.getLinha(), this.getColuna()-1);        
     }
+
+	public int getLinhaAnterior() {
+		return linhaAnterior;
+	}
+
+	public int getColunaAnterior() {
+		return colunaAnterior;
+	}
+    
 }
