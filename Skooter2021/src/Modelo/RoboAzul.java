@@ -1,5 +1,7 @@
 package Modelo;
 
+import java.util.ArrayList;
+
 public class RoboAzul extends Robo{
 
 	private static final long serialVersionUID = 1L;
@@ -14,4 +16,7 @@ public class RoboAzul extends Robo{
 		return false;
 	}
 
+    public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
+        return true;
+    }
 }

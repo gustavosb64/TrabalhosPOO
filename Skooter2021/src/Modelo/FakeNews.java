@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import Auxiliar.Desenhador;
 
@@ -29,4 +30,8 @@ public class FakeNews extends Animado implements Serializable{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+    public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
+        return true;
+    }
 }

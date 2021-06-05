@@ -25,13 +25,14 @@ public class ControleDeJogo {
         for(int i = 1; i < e.size(); i++){
             eTemp = e.get(i); /*Pega o i-esimo elemento do jogo*/
             /*Verifica se o heroi se sobrepoe ao i-ésimo elemento*/
-            if(hHero.getPosicao().estaNaMesmaPosicao(eTemp.getPosicao()))
+            if(hHero.getPosicao().estaNaMesmaPosicao(eTemp.getPosicao())){
+                eTemp.contactHero(hHero, e);
                 /*Nem todos os elementos podem ser transpostos pelo heroi*/
-                if(eTemp instanceof BlocoAnimado) 
-                    ((BlocoAnimado) eTemp).move(hHero.getPosicao());
-            	
-            if(eTemp instanceof Robo)
+/*
+                if(eTemp instanceof Robo)
             	((Robo) eTemp).move();
+                */
+            }
             	
         }
     }

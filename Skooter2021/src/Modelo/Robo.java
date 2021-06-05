@@ -1,5 +1,7 @@
 package Modelo;
 
+import java.util.ArrayList;
+
 public abstract class Robo extends Animado{
 
 	private static final long serialVersionUID = 1L;
@@ -11,6 +13,9 @@ public abstract class Robo extends Animado{
 	
 	public abstract boolean move();
 	
+    public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
+        return true;
+    }
 	
 	
 }

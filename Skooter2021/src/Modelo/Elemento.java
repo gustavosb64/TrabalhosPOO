@@ -1,20 +1,23 @@
 package Modelo;
 
-import Auxiliar.Consts;
-import Auxiliar.Desenhador;
-import Controler.Tela;
-import Auxiliar.Posicao;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
+
+import Auxiliar.Consts;
+import Auxiliar.Desenhador;
+import Auxiliar.Posicao;
 
 /**
  *
  * @author Junio
  */
+@SuppressWarnings("serial")
 public abstract class Elemento implements Serializable {
 
     protected ImageIcon iImage;
@@ -57,5 +60,7 @@ public abstract class Elemento implements Serializable {
    public void autoDesenho(){
         Desenhador.desenhar(this.iImage, pPosicao.getColuna(), pPosicao.getLinha());        
     }   
+
+   public abstract boolean contactHero(Animado hHeroi, ArrayList<Elemento> e);
  
 }

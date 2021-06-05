@@ -73,11 +73,11 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         this.addElemento(cCorona);
 
         CoronaVirus cRobo = new CoronaVirus("robo_azul.png");
-        cCorona.setPosicao(10, 5);        
+        cCorona.setPosicao(6, 2);        
         this.addElemento(cRobo);
         
         Caveira cCaveira = new Caveira("caveira.png");
-        cCaveira.setPosicao(10, 9);
+        cCaveira.setPosicao(6, 7);
         this.addElemento(cCaveira);        
     }
 

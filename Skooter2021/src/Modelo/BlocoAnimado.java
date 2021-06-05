@@ -1,5 +1,7 @@
 package Modelo;
 
+import java.util.ArrayList;
+
 import Auxiliar.Posicao;
 
 public class BlocoAnimado extends Animado {
@@ -10,7 +12,8 @@ public class BlocoAnimado extends Animado {
 		super.bTransponivel = true;
 	}
 	
-	public boolean move(Posicao p) {
+	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
+        Posicao p = hHeroi.getPosicao();
 		if(p.getColunaAnterior() != p.getColuna()) {
 			boolean a = (p.getColunaAnterior() < p.getColuna()) ? super.moveRight() : super.moveLeft();
 			return true;

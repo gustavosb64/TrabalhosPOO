@@ -1,20 +1,13 @@
 package Modelo;
 
-import Auxiliar.Consts;
-import Auxiliar.Desenhador;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.AffineTransform;
-import java.io.IOException;
 import java.io.Serializable;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import java.util.ArrayList;
 
 /**
  *
  * @author Junio
  */
+@SuppressWarnings("serial")
 public class CoronaVirus extends Elemento implements Serializable{
     private boolean bRight;
 
@@ -32,5 +25,9 @@ public class CoronaVirus extends Elemento implements Serializable{
 
         super.autoDesenho();
         bRight = !bRight;
+    }
+
+    public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
+        return true;
     }
 }

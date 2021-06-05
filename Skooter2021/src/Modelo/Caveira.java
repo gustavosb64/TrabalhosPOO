@@ -1,11 +1,12 @@
 package Modelo;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
-import Controler.Tela;
-import java.awt.Graphics;
-import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Caveira extends Elemento implements Serializable{
     private int iContaFrames;
     
@@ -27,4 +28,9 @@ public class Caveira extends Elemento implements Serializable{
             Desenhador.getTelaDoJogo().addElemento(f);
         }
     }    
+
+    public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
+        e.remove(this); 
+        return true;
+    }
 }
