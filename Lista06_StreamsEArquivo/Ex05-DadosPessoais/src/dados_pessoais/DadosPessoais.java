@@ -8,17 +8,19 @@ public class DadosPessoais implements Serializable{
     private int idade;
     private Endereco endereco;
     
+    public DadosPessoais() { }
+
     public DadosPessoais(Endereco endereco, String nome, int idade) {
         this.endereco = endereco;
         this.nome = nome;
         this.idade = idade;
     }
 
-    public Endereco getE() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setE(Endereco endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
