@@ -16,9 +16,6 @@ import java.util.logging.Logger;
 
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
-import Modelo.BlocoAnimado;
-import Modelo.BlocoEstatico;
-import Modelo.Caveira;
 import Modelo.CoronaVirus;
 import Modelo.Elemento;
 import Modelo.Hero;
@@ -27,6 +24,7 @@ import Modelo.Hero;
 public class Tela extends javax.swing.JFrame implements MouseListener, KeyListener {
 
     private Hero hHero;
+    private Fase fase = new Fase();
     private ArrayList<Elemento> eElementos;
     private ControleDeJogo cControle = new ControleDeJogo();
     private Graphics g2;
@@ -44,13 +42,17 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         this.setSize(Consts.RES * Consts.CELL_SIDE + getInsets().left + getInsets().right,
                 Consts.RES * Consts.CELL_SIDE + getInsets().top + getInsets().bottom);
 
-        /*Este array vai guardar os elementos graficos*/
+        eElementos = fase.CriaFase1();
+        hHero = (Hero) fase.get(0);
+
+        /*
+        //Este array vai guardar os elementos graficos
         eElementos = new ArrayList<Elemento>(100);
 
     
-        /*Cria eElementos adiciona elementos*/
-        /*O protagonista (heroi) necessariamente precisa estar na posicao 0 do array*/
-        hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+        //Cria eElementos adiciona elementos
+        //O protagonista (heroi) necessariamente precisa estar na posicao 0 do array
+        hHero = new Hero("skooter_hero.png"); // https://www.online-image-editor.com/ 
         hHero.setPosicao(0, 7);
         this.addElemento(hHero);
         
@@ -77,6 +79,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         Caveira cCaveira = new Caveira("caveira.png");
         cCaveira.setPosicao(6, 7);
         this.addElemento(cCaveira);        
+        */
     }
 
 /*--------------------------------------------------*/
