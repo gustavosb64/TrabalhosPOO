@@ -36,15 +36,28 @@ public class ControleDeJogo {
             	
         }
     }
-    public boolean ehPosicaoValida(ArrayList<Elemento> e, Posicao p){
+
+    public boolean ehPosicaoValida(ArrayList<Elemento> e, Posicao p, int index) {
         Elemento eTemp;
-        /*Validacao da posicao de todos os elementos com relacao a Posicao p*/
-        for(int i = 1; i < e.size(); i++){ /*Olha todos os elementos*/
-            eTemp = e.get(i); /*Pega o i-esimo elemento do jogo*/
-            if(!eTemp.isbTransponivel())
-                if(eTemp.getPosicao().estaNaMesmaPosicao(p))
-                    return false; /*A posicao p é invalida, pois ha um elemento (i-esimo eTemp) intransponivel lá*/
+        /* Validacao da posicao de todos os elementos com relacao a Posicao p /
+        for (int i = 1; i < e.size(); i++) { / Olha todos os elementos /
+            if (index != i) {
+                eTemp = e.get(i); / Pega o i-esimo elemento do jogo */
+                if (!eTemp.isbTransponivel()) {
+                    if (eTemp.getPosicao().estaNaMesmaPosicao(p)) {
+                        if (eTemp.isMovel() == true) {
+                            eTemp.contactHero((Animado) e.get(0), e);
+                            if (!ehPosicaoValida(e, eTemp.getPosicao(), i)) {
+                                eTemp.voltaAUltimaPosicao();
+                                return false;
+                            }
+                        }
+                    }
+                }
+                return false;
+            }
         }
         return true;
     }
+}
 }
