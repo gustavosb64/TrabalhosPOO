@@ -13,10 +13,6 @@ public class Hero extends Animado implements Serializable{
         super(sNomeImagePNG);
     }
 
-    public void voltaAUltimaPosicao(){
-        this.pPosicao.volta();
-    }
-
     @Override
 	public boolean moveUp() {
 	       return this.pPosicao.moveUp();

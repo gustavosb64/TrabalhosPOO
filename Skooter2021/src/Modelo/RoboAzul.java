@@ -13,6 +13,7 @@ public class RoboAzul extends Robo{
 
 	@Override
 	public boolean move() {
+
 		return false;
 	}
 

@@ -3,10 +3,6 @@ package Modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- *
- * @author Junio
- */
 @SuppressWarnings("serial")
 public class CoronaVirus extends Elemento implements Serializable{
     private boolean bRight;
