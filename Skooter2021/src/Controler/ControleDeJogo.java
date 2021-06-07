@@ -1,18 +1,22 @@
 package Controler;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 import Auxiliar.Posicao;
-import Modelo.BlocoAnimado;
 import Modelo.Elemento;
 import Modelo.Hero;
-import Modelo.Robo;
 
 /**
  *
  * @author junio
  */
-public class ControleDeJogo {
+public class ControleDeJogo extends javax.swing.JFrame implements KeyListener{
+	
+	public ControleDeJogo() {
+		  this.addKeyListener(this);
+	}
     public void desenhaTudo(ArrayList<Elemento> e){
         for(int i = 0; i < e.size(); i++){
             e.get(i).autoDesenho();
@@ -47,4 +51,21 @@ public class ControleDeJogo {
         }
         return true;
     }
+    
+    
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
