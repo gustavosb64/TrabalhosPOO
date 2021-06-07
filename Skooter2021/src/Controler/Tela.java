@@ -22,10 +22,8 @@ import Modelo.Caveira;
 import Modelo.CoronaVirus;
 import Modelo.Elemento;
 import Modelo.Hero;
-/**
- *
- * @author junio
- */
+
+@SuppressWarnings("serial")
 public class Tela extends javax.swing.JFrame implements MouseListener, KeyListener {
 
     private Hero hHero;
@@ -161,7 +159,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         }
         
         /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/
-        if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao())) {
+        if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao(),0)) {
             hHero.voltaAUltimaPosicao();
         }
 
@@ -179,7 +177,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
          this.hHero.getPosicao().setPosicao(y/Consts.CELL_SIDE, x/Consts.CELL_SIDE);
 
         /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/
-        if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao())) {
+        if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao(),0)) {
             hHero.voltaAUltimaPosicao();
         }         
          

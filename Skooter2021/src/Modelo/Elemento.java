@@ -24,11 +24,13 @@ public abstract class Elemento implements Serializable {
     protected Posicao pPosicao;
     protected boolean bTransponivel; /*Pode passar por cima?*/
     protected boolean bMortal;       /*Se encostar, morre?*/
+    protected boolean bMovel;       
        
     protected Elemento(String sNomeImagePNG) {
         this.pPosicao = new Posicao(1, 1);
         this.bTransponivel = true;
         this.bMortal = false;
+        this.bMovel = false;
         try {
             iImage = new ImageIcon(new java.io.File(".").getCanonicalPath() + Consts.PATH + sNomeImagePNG);
             Image img = iImage.getImage();
@@ -39,6 +41,10 @@ public abstract class Elemento implements Serializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    public boolean isMovel() {
+        return bMovel;
     }
 
     public Posicao getPosicao() {
@@ -57,10 +63,14 @@ public abstract class Elemento implements Serializable {
         return pPosicao.setPosicao(linha, coluna);
     }
     
-   public void autoDesenho(){
+    public void autoDesenho(){
         Desenhador.desenhar(this.iImage, pPosicao.getColuna(), pPosicao.getLinha());        
     }   
 
-   public abstract boolean contactHero(Animado hHeroi, ArrayList<Elemento> e);
+    public abstract boolean contactHero(Animado hHeroi, ArrayList<Elemento> e);
  
+    public void voltaAUltimaPosicao(){
+        this.pPosicao.volta();
+    }
+
 }
