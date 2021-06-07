@@ -63,7 +63,7 @@ public abstract class Elemento implements Serializable {
         return pPosicao.setPosicao(linha, coluna);
     }
     
-    public void autoDesenho(){
+	public void autoDesenho(ArrayList<Elemento> ListElem, int index) {
         Desenhador.desenhar(this.iImage, pPosicao.getColuna(), pPosicao.getLinha());        
     }   
 
@@ -71,6 +71,16 @@ public abstract class Elemento implements Serializable {
  
     public void voltaAUltimaPosicao(){
         this.pPosicao.volta();
+    }
+
+    public int getIndex(ArrayList<Elemento> ListElem){
+
+        for (int i = 0; i < ListElem.size(); i++){
+            if (this.pPosicao == ListElem.get(i).getPosicao())
+                return i;
+        }
+        
+        return -1;
     }
 
 }

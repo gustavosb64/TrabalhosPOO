@@ -1,7 +1,5 @@
 package Modelo;
 
-import java.util.ArrayList;
-
 public abstract class Animado extends Elemento {
 
 	private static final long serialVersionUID = 1L;
@@ -30,7 +28,4 @@ public abstract class Animado extends Elemento {
 		
 		public abstract boolean move();
 		
-		public boolean verificaColisao(ArrayList<Elemento> e) {
-			return true;
-		}
 }

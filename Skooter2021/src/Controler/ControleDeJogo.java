@@ -8,9 +8,9 @@ import Modelo.Elemento;
 import Modelo.Hero;
 
 public class ControleDeJogo {
-    public void desenhaTudo(ArrayList<Elemento> e){
-        for(int i = 0; i < e.size(); i++){
-            e.get(i).autoDesenho();
+    public void desenhaTudo(ArrayList<Elemento> ListElem){
+        for(int i = 0; i < ListElem.size(); i++){
+            ListElem.get(i).autoDesenho(ListElem, i);
         }
     }
     public void processaTudo(ArrayList<Elemento> e){
@@ -24,12 +24,6 @@ public class ControleDeJogo {
                 if (eTemp.isbTransponivel() == true) {
                     e.remove(eTemp);
                 }
-                /*
-                eTemp.contactHero(hHero, e);
-                //Nem todos os elementos podem ser transpostos pelo heroi
-                if(eTemp instanceof Robo)
-            	((Robo) eTemp).move();
-                */
             }
         }
     }
@@ -42,7 +36,7 @@ public class ControleDeJogo {
                 eTemp = e.get(i); // Pega o i-esimo elemento do jogo 
                 if (!eTemp.isbTransponivel()) {
                     if (eTemp.getPosicao().estaNaMesmaPosicao(p)) {
-                        if (eTemp.isMovel() == true) {
+                        if (index == 0 && eTemp.isMovel() == true) {
                             eTemp.contactHero((Animado) e.get(0), e);
                             if (!ehPosicaoValida(e, eTemp.getPosicao(), i)) {
                                 eTemp.voltaAUltimaPosicao();
@@ -57,4 +51,5 @@ public class ControleDeJogo {
         }
         return true;
     }
+
 }
