@@ -11,68 +11,48 @@ public class Robo extends Animado{
 	private static final long serialVersionUID = 1L;
     private int direction; // 0 = cima; 1 = esquerda; 2 = baixo; 3 = direita
     private int iContaFrames; 
+    private ArrayList<Integer> ListDirections = new ArrayList<Integer>();
 	
 	public Robo(String sNomeImagePNG) {
 		super(sNomeImagePNG);
         super.bTransponivel = false;
         this.iContaFrames = 0;
-        this.direction = 0;
+        for (int i=0; i<4; i++) ListDirections.add(i);
 	}
 
 	public void autoDesenho(ArrayList<Elemento> ListElem, int index) {
         ControleDeJogo cControle = new ControleDeJogo();
 
-        ArrayList<Integer> Lista = new ArrayList<Integer>();
         Random randGen = new Random();
+        
+        this.direction = ListDirections.get(randGen.nextInt(4));
         this.iContaFrames++;
+
         if(this.iContaFrames == Consts.TIMER_ROBO){
-            if (this.direction == 0){
-                System.out.println("0");
-                if (!this.moveUp() || !cControle.ehPosicaoValida(ListElem,this.getPosicao(),index)) {
-                    this.voltaAUltimaPosicao();
+            switch (this.direction){
+                case 0:
+                    if (!this.moveUp() || !cControle.ehPosicaoValida(ListElem,this.getPosicao(),index)){
+                        this.voltaAUltimaPosicao();
+                    }
+                    break;
 
-                    Lista.add(1);
-                    Lista.add(2);
-                    Lista.add(3);
+                case 1:
+                    if (!this.moveRight() || !cControle.ehPosicaoValida(ListElem,this.getPosicao(),index)){
+                        this.voltaAUltimaPosicao();
+                    }
+                    break;
 
-                    this.direction = Lista.get(randGen.nextInt(3));
-                }
-            }
-            if (this.direction == 1){
-                System.out.println("1");
-                if (!this.moveRight() || !cControle.ehPosicaoValida(ListElem,this.getPosicao(),index)) {
-                    this.voltaAUltimaPosicao();
-
-                    Lista.add(0);
-                    Lista.add(2);
-                    Lista.add(3);
-
-                    this.direction = Lista.get(randGen.nextInt(3));
-                }
-            }
-            if (this.direction == 2){
-                System.out.println("2");
-                if (!this.moveDown() || !cControle.ehPosicaoValida(ListElem,this.getPosicao(),index)) {
-                    this.voltaAUltimaPosicao();
-
-                    Lista.add(0);
-                    Lista.add(1);
-                    Lista.add(3);
-
-                    this.direction = Lista.get(randGen.nextInt(3));
-                }
-            }
-            if (this.direction == 3){
-                System.out.println("3");
-                if (!this.moveLeft() || !cControle.ehPosicaoValida(ListElem,this.getPosicao(),index)) {
-                    this.voltaAUltimaPosicao();
-
-                    Lista.add(0);
-                    Lista.add(1);
-                    Lista.add(2);
-
-                    this.direction = Lista.get(randGen.nextInt(3));
-                }
+                case 2:
+                    if (!this.moveDown() || !cControle.ehPosicaoValida(ListElem,this.getPosicao(),index)){
+                        this.voltaAUltimaPosicao();
+                    }
+                    break;
+                    
+                case 3:
+                    if (!this.moveLeft() || !cControle.ehPosicaoValida(ListElem,this.getPosicao(),index)){
+                        this.voltaAUltimaPosicao();
+                    }
+                    break;
             }
 
             this.iContaFrames = 0;
@@ -80,7 +60,6 @@ public class Robo extends Animado{
 
         super.autoDesenho(ListElem, index);
     }
-
 
 	public boolean move(){
 
