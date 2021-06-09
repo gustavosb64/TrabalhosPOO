@@ -4,41 +4,29 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.PrintWriter;
 
 public class Main{
 
+    /*texto com substituição de substring armazenado em output.txt*/
     public static void main(String[] args){
-        String fileName = "textFile1.txt";
-        File fString = new File(fileName);
+        String inputFileName = "casosTeste"+File.separator+"textFile1.txt";
 
-        BufferedReader bReader;
-        /*TODO:
-         * Implementar escrita de nova string no arquivo de texto
-        */
         try {
-            FileReader fReader = new FileReader(fString);
-            RandomAccessFile raf = new RandomAccessFile(fString, "rw");
-            raf.seek(0);
+            PrintWriter pWriter = new PrintWriter("casosTeste"+File.separator+"output.txt");
 
-            bReader = new BufferedReader(fReader);
-            String newTxtLine;
+            File fInput = new File(inputFileName);
+            FileReader fReader = new FileReader(fInput);
+            BufferedReader bReader = new BufferedReader(fReader);
+
             String origTxtLine = bReader.readLine();
-            int rafLength = 0;
             do{
-                System.out.println(origTxtLine);
-                if (origTxtLine.indexOf("muito") != -1){
-                    newTxtLine = origTxtLine.replaceAll("muito","pouco"); 
-                    //raf.seek(rafLength);
-                    //raf.writeUTF(newTxtLine);
-                    //rafLength += newTxtLine.length();
-                    System.out.println(newTxtLine);
-                }
-                else rafLength += origTxtLine.length();
+                pWriter.println(origTxtLine.replaceAll("muito","pouco"));
                 origTxtLine = bReader.readLine();
             }while(origTxtLine != null);
 
-            raf.close();
+            bReader.close();
+            pWriter.close();
 
         } catch (IOException e){
             e.printStackTrace(); 
