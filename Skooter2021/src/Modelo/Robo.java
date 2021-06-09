@@ -11,23 +11,21 @@ public class Robo extends Animado{
 	private static final long serialVersionUID = 1L;
     private int direction; // 0 = cima; 1 = esquerda; 2 = baixo; 3 = direita
     private int iContaFrames; 
-    private ArrayList<Integer> ListDirections = new ArrayList<Integer>();
 	
 	public Robo(String sNomeImagePNG) {
 		super(sNomeImagePNG);
         super.bTransponivel = false;
         this.iContaFrames = 0;
-        for (int i=0; i<4; i++) ListDirections.add(i);
 	}
 
 	public void autoDesenho(ArrayList<Elemento> ListElem, int index) {
         ControleDeJogo cControle = new ControleDeJogo();
 
+        //seleção aleatória para a direção do movimento
         Random randGen = new Random();
-        
-        this.direction = ListDirections.get(randGen.nextInt(4));
-        this.iContaFrames++;
+        this.direction = randGen.nextInt(4);
 
+        this.iContaFrames++;
         if(this.iContaFrames == Consts.TIMER_ROBO){
             switch (this.direction){
                 case 0:
