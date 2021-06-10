@@ -7,10 +7,13 @@ import Auxiliar.Posicao;
 public class BlocoAnimado extends Animado {
 	private static final long serialVersionUID = 1L;
 
+	protected boolean bDestrutivel;
+	
 	public BlocoAnimado(String sNomeImagePNG) {
 		super(sNomeImagePNG);
 		super.bTransponivel = false;
 		super.bMovel = true;
+		this.bDestrutivel = false;
 	}
 	
 	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
@@ -23,8 +26,7 @@ public class BlocoAnimado extends Animado {
 			boolean a = (p.getLinhaAnterior() < p.getLinha()) ? super.moveDown() : super.moveUp();
 			return true;
 		}
-		return true;
-			
+		return false;	
 	}
 
 	@Override

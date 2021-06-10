@@ -72,5 +72,18 @@ public abstract class Elemento implements Serializable {
     public void voltaAUltimaPosicao(){
         this.pPosicao.volta();
     }
+    
+   /**
+    * Retorna true se existirem elementos em contato com este elemento. do contrario retorna false*/
+    public boolean estaEmContato(Elemento outroElemento) {
+    	if((( this.getPosicao().getColuna() - 1) == outroElemento.getPosicao().getColuna())
+    		||(this.getPosicao().getColuna() + 1) == outroElemento.getPosicao().getColuna()	
+    		||(this.getPosicao().getLinha() - 1) == outroElemento.getPosicao().getLinha()
+    		||(this.getPosicao().getLinha() + 1) == outroElemento.getPosicao().getLinha()	
+    	)
+    	return true;
+    	
+    	return false;
+    }
 
 }

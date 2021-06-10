@@ -16,6 +16,7 @@ public class ControleDeJogo {
     public void processaTudo(ArrayList<Elemento> e){
         Hero hHero = (Hero)e.get(0); /*O heroi (protagonista) eh sempre o primeiro do array*/
         Elemento eTemp;
+        
         /*Processa todos os demais em relacao ao heroi*/
         for(int i = 1; i < e.size(); i++){
             eTemp = e.get(i); /*Pega o i-esimo elemento do jogo*/
@@ -30,7 +31,10 @@ public class ControleDeJogo {
                 if(eTemp instanceof Robo)
             	((Robo) eTemp).move();
                 */
+                
             }
+            if(hHero.estaEmContato(eTemp))
+            	System.out.println("Fez contato");
         }
     }
 
@@ -56,5 +60,9 @@ public class ControleDeJogo {
             }
         }
         return true;
+    }
+    
+    public void destroiBlocoVerde(Animado hHeroi) {
+    	//if()
     }
 }
