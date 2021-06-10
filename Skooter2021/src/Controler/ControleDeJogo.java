@@ -46,7 +46,7 @@ public class ControleDeJogo {
                 eTemp = e.get(i); // Pega o i-esimo elemento do jogo 
                 if (!eTemp.isbTransponivel()) {
                     if (eTemp.getPosicao().estaNaMesmaPosicao(p)) {
-                        if (eTemp.isMovel() == true) {
+                        if (index == 0 && eTemp.isMovel() == true) {
                             eTemp.contactHero((Animado) e.get(0), e);
                             if (!ehPosicaoValida(e, eTemp.getPosicao(), i)) {
                                 eTemp.voltaAUltimaPosicao();
