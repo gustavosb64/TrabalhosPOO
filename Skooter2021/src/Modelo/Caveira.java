@@ -16,8 +16,8 @@ public class Caveira extends Elemento implements Serializable{
         this.iContaFrames = 0;
     }
 
-    public void autoDesenho() {
-        super.autoDesenho();
+	public void autoDesenho(ArrayList<Elemento> ListElem, int index) {
+        super.autoDesenho(ListElem, index);
 
         this.iContaFrames++;
         /*A cada intervalo de Consts.TIMER_DISPARO milisegundos, cria um fakenews na posicao a direita*/

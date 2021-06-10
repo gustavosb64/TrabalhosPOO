@@ -8,9 +8,9 @@ import Modelo.Elemento;
 import Modelo.Hero;
 
 public class ControleDeJogo {
-    public void desenhaTudo(ArrayList<Elemento> e){
-        for(int i = 0; i < e.size(); i++){
-            e.get(i).autoDesenho();
+    public void desenhaTudo(ArrayList<Elemento> ListElem){
+        for(int i = 0; i < ListElem.size(); i++){
+            ListElem.get(i).autoDesenho(ListElem, i);
         }
     }
     public void processaTudo(ArrayList<Elemento> e){

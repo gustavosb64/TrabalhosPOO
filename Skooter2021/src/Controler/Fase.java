@@ -10,6 +10,7 @@ import Modelo.Caveira;
 import Modelo.CoronaVirus;
 import Modelo.Elemento;
 import Modelo.Hero;
+import Modelo.Robo;
 
 @SuppressWarnings("serial")
 public class Fase extends ArrayList<Elemento>{
@@ -21,7 +22,7 @@ public class Fase extends ArrayList<Elemento>{
         this.add(hHero);
         
         BlocoEstatico bloco = new BlocoEstatico("bloco_intransponivel_estatico.png");
-        bloco.setPosicao(3, 5);
+        bloco.setPosicao(3, 2);
         this.add(bloco);
         
         BlocoVerdePrisma bloco3 = new BlocoVerdePrisma("bloco_verde.png");
@@ -40,8 +41,8 @@ public class Fase extends ArrayList<Elemento>{
         cCorona.setPosicao(3, 3);
         this.add(cCorona);
 
-        CoronaVirus cRobo = new CoronaVirus("robo_azul.png");
-        cCorona.setPosicao(6, 2);        
+        Robo cRobo = new Robo("robo_azul.png");
+        cRobo.setPosicao(6, 2);        
         this.add(cRobo);
         
         Caveira cCaveira = new Caveira("caveira.png");
