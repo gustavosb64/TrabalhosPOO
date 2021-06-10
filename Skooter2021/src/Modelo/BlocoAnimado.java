@@ -20,11 +20,11 @@ public class BlocoAnimado extends Animado {
         Posicao p = hHeroi.getPosicao();
 		if(p.getColunaAnterior() != p.getColuna()) {
 			boolean a = (p.getColunaAnterior() < p.getColuna()) ? super.moveRight() : super.moveLeft();
-			return true;
+			return a;
 		}
 		if(p.getLinhaAnterior() != p.getLinha()) {
 			boolean a = (p.getLinhaAnterior() < p.getLinha()) ? super.moveDown() : super.moveUp();
-			return true;
+			return a;
 		}
 		return false;	
 	}

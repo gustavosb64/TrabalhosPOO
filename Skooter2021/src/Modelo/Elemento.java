@@ -90,6 +90,10 @@ public abstract class Elemento implements Serializable {
     	
     	return false;
     }
+    
+    public void contatoComAtaque(ArrayList<Elemento> listaElementos, Orientacao orientacao, int index) {
+    	
+    }
 
     public int getIndex(ArrayList<Elemento> ListElem){
 
@@ -100,5 +104,10 @@ public abstract class Elemento implements Serializable {
         
         return -1;
     }
+
+	public void contatoComAtaque(ArrayList<Elemento> listaElementos) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

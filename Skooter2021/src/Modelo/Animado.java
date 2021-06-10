@@ -8,12 +8,12 @@ public abstract class Animado extends Elemento {
 
 	private static final long serialVersionUID = 1L;
 	private Posicao posicaoAnterior;
-	private Orientacao orientacao;
+	protected Orientacao orientacao;
 
 	protected Animado(String sNomeImagePNG) {
 		super(sNomeImagePNG);
 		this.posicaoAnterior = this.getPosicao();
-		this.orientacao = null;
+		this.orientacao = Orientacao.BAIXO;
 
 	}
 
@@ -40,7 +40,16 @@ public abstract class Animado extends Elemento {
 		this.orientacao = Orientacao.ESQUERDA;
 		return this.pPosicao.moveLeft();
 	}
+	
+	public Orientacao getOrientacao() {
+		return this.orientacao;
+	}
 
 	public abstract boolean move();
+
+	public void contatoComAtaque(ArrayList<Elemento> listaElementos, Orientacao orientacao) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
