@@ -9,7 +9,7 @@ import Modelo.Hero;
 
 public class ControleDeJogo {
 	public void desenhaTudo(ArrayList<Elemento> ListElem) {
-		for (int i = 0; i < ListElem.size(); i++) {
+		for (int i = ListElem.size()-1; i >= 0; i--) {
 			ListElem.get(i).autoDesenho(ListElem, i);
 		}
 	}
