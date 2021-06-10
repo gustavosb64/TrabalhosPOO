@@ -7,24 +7,26 @@ import Auxiliar.Posicao;
 public class BlocoAnimado extends Animado {
 	private static final long serialVersionUID = 1L;
 
+	protected boolean bDestrutivel;
+	
 	public BlocoAnimado(String sNomeImagePNG) {
 		super(sNomeImagePNG);
 		super.bTransponivel = false;
-		super.bMovel = true; //indica se objeto se move em contato com heroi
+		super.bMovel = true;
+		this.bDestrutivel = false;
 	}
 	
 	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
         Posicao p = hHeroi.getPosicao();
 		if(p.getColunaAnterior() != p.getColuna()) {
 			boolean a = (p.getColunaAnterior() < p.getColuna()) ? super.moveRight() : super.moveLeft();
-			return true;
+			return a;
 		}
 		if(p.getLinhaAnterior() != p.getLinha()) {
 			boolean a = (p.getLinhaAnterior() < p.getLinha()) ? super.moveDown() : super.moveUp();
-			return true;
+			return a;
 		}
-		return true;
-			
+		return false;	
 	}
 
 	@Override

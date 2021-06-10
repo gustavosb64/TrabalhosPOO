@@ -72,6 +72,28 @@ public abstract class Elemento implements Serializable {
     public void voltaAUltimaPosicao(){
         this.pPosicao.volta();
     }
+    
+   /**
+    * Retorna true se existirem elementos em contato com este elemento. do contrario retorna false*/
+    public boolean estaEmContato(Elemento outroElemento) {
+    	Posicao p = new Posicao(this.pPosicao.getLinha()-1, this.getPosicao().getColuna());
+    	if(p.estaNaMesmaPosicao(outroElemento.getPosicao())) return true;
+    	
+    	p.setPosicao(this.getPosicao().getLinha()+1, this.getPosicao().getColuna());
+    	if(p.estaNaMesmaPosicao(outroElemento.getPosicao())) return true;
+    	
+    	p.setPosicao(this.getPosicao().getLinha(), this.getPosicao().getColuna()-1);
+    	if(p.estaNaMesmaPosicao(outroElemento.getPosicao())) return true;
+    	
+    	p.setPosicao(this.getPosicao().getLinha()+1, this.getPosicao().getColuna()+1);
+    	if(p.estaNaMesmaPosicao(outroElemento.getPosicao())) return true;
+    	
+    	return false;
+    }
+    
+    public void contatoComAtaque(ArrayList<Elemento> listaElementos, Orientacao orientacao, int index) {
+    	
+    }
 
     public int getIndex(ArrayList<Elemento> ListElem){
 
@@ -82,5 +104,10 @@ public abstract class Elemento implements Serializable {
         
         return -1;
     }
+
+	public void contatoComAtaque(ArrayList<Elemento> listaElementos) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
