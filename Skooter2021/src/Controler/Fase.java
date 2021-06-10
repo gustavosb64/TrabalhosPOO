@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import Modelo.BlocoAnimado;
 import Modelo.BlocoEstatico;
-import Modelo.BlocoVerdeSolido;
 import Modelo.BlocoVerdePrisma;
 import Modelo.Caveira;
+import Modelo.Coracao;
 import Modelo.CoronaVirus;
 import Modelo.Elemento;
 import Modelo.Hero;
@@ -37,9 +37,9 @@ public class Fase extends ArrayList<Elemento>{
         cTeste.setPosicao(5, 5);
         this.add(cTeste);     
 
-        CoronaVirus cCorona = new CoronaVirus("robo.png");
-        cCorona.setPosicao(3, 3);
-        this.add(cCorona);
+        Coracao cCoracao = new Coracao("heart.png");
+        cCoracao.setPosicao(3, 3);
+        this.add(cCoracao);
 
         Robo cRobo = new Robo("robo_azul.png");
         cRobo.setPosicao(6, 2);        
