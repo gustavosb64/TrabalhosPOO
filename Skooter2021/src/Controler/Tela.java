@@ -44,42 +44,6 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
 
         eElementos = fase.CriaFase1();
         hHero = (Hero) fase.get(0);
-
-        /*
-        //Este array vai guardar os elementos graficos
-        eElementos = new ArrayList<Elemento>(100);
-
-    
-        //Cria eElementos adiciona elementos
-        //O protagonista (heroi) necessariamente precisa estar na posicao 0 do array
-        hHero = new Hero("skooter_hero.png"); // https://www.online-image-editor.com/ 
-        hHero.setPosicao(0, 7);
-        this.addElemento(hHero);
-        
-        BlocoEstatico bloco = new BlocoEstatico("bloco_intransponivel_estatico.png");
-        bloco.setPosicao(3, 5);
-        this.addElemento(bloco);
-        
-        BlocoAnimado bloco2 = new BlocoAnimado("bloco_intransponivel_estatico.png");
-        bloco2.setPosicao(4, 3);
-        this.addElemento(bloco2);
-        
-        CoronaVirus cTeste = new CoronaVirus("robo_azul.png");
-        cTeste.setPosicao(5, 5);
-        this.addElemento(cTeste);     
-
-        CoronaVirus cCorona = new CoronaVirus("robo.png");
-        cCorona.setPosicao(3, 3);
-        this.addElemento(cCorona);
-
-        CoronaVirus cRobo = new CoronaVirus("robo_azul.png");
-        cCorona.setPosicao(6, 2);        
-        this.addElemento(cRobo);
-        
-        Caveira cCaveira = new Caveira("caveira.png");
-        cCaveira.setPosicao(6, 7);
-        this.addElemento(cCaveira);        
-        */
     }
 
 /*--------------------------------------------------*/
@@ -240,4 +204,9 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
 
     public void keyReleased(KeyEvent e) {
     }
+
+    public ArrayList<Elemento> getArrayElemento(){
+       return this.eElementos; 
+    }
+
 }

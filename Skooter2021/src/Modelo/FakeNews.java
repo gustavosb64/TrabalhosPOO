@@ -5,10 +5,6 @@ import java.util.ArrayList;
 
 import Auxiliar.Desenhador;
 
-/**
- *
- * @author junio
- */
 public class FakeNews extends Animado implements Serializable{
             
 	private static final long serialVersionUID = 1L;
@@ -18,9 +14,9 @@ public class FakeNews extends Animado implements Serializable{
         this.bMortal = true;
     }
 
-    public void autoDesenho() {
-        super.autoDesenho();
-        /*Movo a direita, quando nao poder se mover ainda mais para a direita, pede para ser removido do jogo*/
+	public void autoDesenho(ArrayList<Elemento> ListElem, int index) {
+        super.autoDesenho(ListElem, index);
+        /*Movo a cima, quando nao poder se mover ainda mais para cima, pede para ser removido do jogo*/
         if(!this.moveUp())
             Desenhador.getTelaDoJogo().removeElemento(this);
     }

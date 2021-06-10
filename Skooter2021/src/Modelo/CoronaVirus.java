@@ -13,13 +13,13 @@ public class CoronaVirus extends Elemento implements Serializable{
         this.bTransponivel = false;
     }
     
-    public void autoDesenho(){
+	public void autoDesenho(ArrayList<Elemento> ListElem, int index) {
         if(bRight)
             this.setPosicao(pPosicao.getLinha(), pPosicao.getColuna()+1);
         else
             this.setPosicao(pPosicao.getLinha(), pPosicao.getColuna()-1);           
 
-        super.autoDesenho();
+        super.autoDesenho(ListElem, index);
         bRight = !bRight;
     }
 

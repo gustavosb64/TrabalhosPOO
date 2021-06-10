@@ -10,7 +10,7 @@ public class BlocoAnimado extends Animado {
 	public BlocoAnimado(String sNomeImagePNG) {
 		super(sNomeImagePNG);
 		super.bTransponivel = false;
-		super.bMovel = true;
+		super.bMovel = true; //indica se objeto se move em contato com heroi
 	}
 	
 	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
