@@ -61,9 +61,18 @@ public class Coracao extends Animado{
         super.autoDesenho(ListElem, index);
     }
 
-
-
     public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
         return true;
     }
+
+    @Override
+	public void contatoTransponivel(ArrayList<Elemento> listaElementos) { 
+        Hero heroi = (Hero) listaElementos.get(0);
+        heroi.setIVidas(heroi.getIVidas()+1);
+
+	    listaElementos.remove(this);
+        return;
+    }
+
+
 }

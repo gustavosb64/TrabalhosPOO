@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
-import Modelo.CoronaVirus;
 import Modelo.Elemento;
 import Modelo.Hero;
 
@@ -44,6 +43,10 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
 
         eElementos = fase.CriaFase1();
         hHero = (Hero) fase.get(0);
+    }
+
+    public ArrayList<Elemento> getListaElementos(){
+        return this.eElementos;
     }
 
 /*--------------------------------------------------*/
@@ -116,8 +119,14 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             hHero.moveRight();
         } else if(e.getKeyCode() == KeyEvent.VK_SPACE) {
         	hHero.ataque(eElementos); 
+        } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            System.exit(0);
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
+
+            this.eElementos.clear();
+            eElementos = fase.CriaFase1();
         
+            /*
             this.eElementos.clear();
             hHero = new Hero("vacina.png");
             hHero.setPosicao(0, 7);
@@ -126,6 +135,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             CoronaVirus cTeste = new CoronaVirus("carro_azul.png");
             cTeste.setPosicao(5, 5);
             this.addElemento(cTeste);
+            */
         }
         
         /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/

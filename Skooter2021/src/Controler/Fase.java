@@ -51,9 +51,21 @@ public class Fase extends ArrayList<Elemento>{
         cCaveira.setPosicao(7, 8);
         this.add(cCaveira);        
 
-        Seta sSeta = new Seta("arrow_down.png", Orientacao.BAIXO);
-        sSeta.setPosicao(2, 5);
-        this.add(sSeta);        
+        Seta sSeta4 = new Seta("arrow_down.png", Orientacao.BAIXO);
+        sSeta4.setPosicao(1, 5);
+        this.add(sSeta4);        
+
+        Seta sSeta3 = new Seta("arrow_down.png", Orientacao.BAIXO);
+        sSeta3.setPosicao(2, 5);
+        this.add(sSeta3);        
+
+        Seta sSeta2 = new Seta("arrow_down.png", Orientacao.BAIXO);
+        sSeta2.setPosicao(3, 5);
+        this.add(sSeta2);        
+
+        Seta sSeta1 = new Seta("arrow_down.png", Orientacao.BAIXO);
+        sSeta1.setPosicao(7, 5);
+        this.add(sSeta1);        
 
         return this;
     }

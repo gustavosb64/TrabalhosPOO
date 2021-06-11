@@ -5,6 +5,7 @@ import java.util.Random;
 
 import Auxiliar.Consts;
 import Controler.ControleDeJogo;
+import Controler.Fase;
 
 public class Robo extends Animado{
 
@@ -14,7 +15,7 @@ public class Robo extends Animado{
 	
 	public Robo(String sNomeImagePNG) {
 		super(sNomeImagePNG);
-        super.bTransponivel = false;
+        super.bTransponivel = true;
         this.iContaFrames = 0;
 	}
 
@@ -66,6 +67,16 @@ public class Robo extends Animado{
 
     public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
         return true;
+    }
+
+    @Override
+	public void contatoTransponivel(ArrayList<Elemento> listaElementos) { 
+
+
+        Fase fase = new Fase();
+        listaElementos = fase.CriaFase1();
+
+        return;
     }
 	
 }

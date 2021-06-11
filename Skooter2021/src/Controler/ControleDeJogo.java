@@ -26,11 +26,6 @@ public class ControleDeJogo {
 				if (eTemp.isbTransponivel() == true) {
                     eTemp.contatoTransponivel(e);
 				}
-				/*
-				 * eTemp.contactHero(hHero, e); //Nem todos os elementos podem ser transpostos
-				 * pelo heroi if(eTemp instanceof Robo) ((Robo) eTemp).move();
-				 */
-
 			}
 		}
 	}
