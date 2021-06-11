@@ -18,7 +18,6 @@ public class CoronaVirus extends Elemento implements Serializable{
             this.setPosicao(pPosicao.getLinha(), pPosicao.getColuna()+1);
         else
             this.setPosicao(pPosicao.getLinha(), pPosicao.getColuna()-1);           
-
         super.autoDesenho(ListElem, index);
         bRight = !bRight;
     }

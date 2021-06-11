@@ -13,10 +13,6 @@ import Auxiliar.Consts;
 import Auxiliar.Desenhador;
 import Auxiliar.Posicao;
 
-/**
- *
- * @author Junio
- */
 @SuppressWarnings("serial")
 public abstract class Elemento implements Serializable {
 
@@ -25,6 +21,7 @@ public abstract class Elemento implements Serializable {
     protected boolean bTransponivel; /*Pode passar por cima?*/
     protected boolean bMortal;       /*Se encostar, morre?*/
     protected boolean bMovel;       
+	protected Orientacao orientacao;
        
     protected Elemento(String sNomeImagePNG) {
         this.pPosicao = new Posicao(1, 1);
@@ -101,13 +98,17 @@ public abstract class Elemento implements Serializable {
             if (this.pPosicao == ListElem.get(i).getPosicao())
                 return i;
         }
-        
+     
         return -1;
     }
 
 	public void contatoComAtaque(ArrayList<Elemento> listaElementos) {
 		// TODO Auto-generated method stub
-		
+	}
+
+	public void contatoTransponivel(ArrayList<Elemento> listaElementos) { 
+	    listaElementos.remove(this);
+        return;
 	}
 
 }
