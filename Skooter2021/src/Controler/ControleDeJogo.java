@@ -9,7 +9,7 @@ import Modelo.Hero;
 
 public class ControleDeJogo {
 	public void desenhaTudo(ArrayList<Elemento> ListElem) {
-		for (int i = 0; i < ListElem.size(); i++) {
+		for (int i = ListElem.size()-1; i >= 0; i--) {
 			ListElem.get(i).autoDesenho(ListElem, i);
 		}
 	}
@@ -24,7 +24,7 @@ public class ControleDeJogo {
 			/* Verifica se o heroi se sobrepoe ao i-ésimo elemento */
 			if (hHero.getPosicao().estaNaMesmaPosicao(eTemp.getPosicao())) {
 				if (eTemp.isbTransponivel() == true) {
-					e.remove(eTemp);
+                    eTemp.contatoTransponivel(e);
 				}
 				/*
 				 * eTemp.contactHero(hHero, e); //Nem todos os elementos podem ser transpostos
@@ -48,10 +48,8 @@ public class ControleDeJogo {
 								if (!ehPosicaoValida(e, eTemp.getPosicao(), i)) {
 									eTemp.voltaAUltimaPosicao();
 									return false;
-								} else
-									return true;
-							}else
-								return false;
+								} else return true;
+							} else return false;
 						}
 						return false;
 					}
@@ -60,4 +58,21 @@ public class ControleDeJogo {
 		}
 		return true;
 	}
+
+	public boolean ehPosicaoValidaSeta(ArrayList<Elemento> e, Posicao p, int index) {
+		Elemento eTemp;
+		/* Validacao da posicao de todos os elementos com relacao a Posicao p */
+		for (int i = 1; i < e.size(); i++) { // Olha todos os elementos
+			if (index != i) {
+				eTemp = e.get(i); // Pega o i-esimo elemento do jogo
+				if (!eTemp.isbTransponivel()) {
+					if (eTemp.getPosicao().estaNaMesmaPosicao(p)) {
+						return false;
+                    }
+				}
+			}
+		}
+		return true;
+	}
+
 }

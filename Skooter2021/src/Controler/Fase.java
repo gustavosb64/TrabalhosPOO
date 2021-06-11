@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 import Modelo.BlocoAnimado;
 import Modelo.BlocoEstatico;
-import Modelo.BlocoVerdeSolido;
 import Modelo.BlocoVerdePrisma;
 import Modelo.Caveira;
+import Modelo.Coracao;
 import Modelo.CoronaVirus;
 import Modelo.Elemento;
 import Modelo.Hero;
+import Modelo.Orientacao;
 import Modelo.Robo;
+import Modelo.Seta;
 
 @SuppressWarnings("serial")
 public class Fase extends ArrayList<Elemento>{
@@ -30,16 +32,16 @@ public class Fase extends ArrayList<Elemento>{
         this.add(bloco3);
         
         BlocoAnimado bloco2 = new BlocoAnimado("bloco_intransponivel_estatico.png");
-        bloco2.setPosicao(4, 3);
+        bloco2.setPosicao(3, 5);
         this.add(bloco2);
         
         CoronaVirus cTeste = new CoronaVirus("robo_azul.png");
         cTeste.setPosicao(5, 5);
         this.add(cTeste);     
 
-        CoronaVirus cCorona = new CoronaVirus("robo.png");
-        cCorona.setPosicao(3, 3);
-        this.add(cCorona);
+        Coracao cCoracao = new Coracao("heart.png");
+        cCoracao.setPosicao(3, 3);
+        this.add(cCoracao);
 
         Robo cRobo = new Robo("robo_azul.png");
         cRobo.setPosicao(6, 2);        
@@ -48,6 +50,10 @@ public class Fase extends ArrayList<Elemento>{
         Caveira cCaveira = new Caveira("caveira.png");
         cCaveira.setPosicao(7, 8);
         this.add(cCaveira);        
+
+        Seta sSeta = new Seta("arrow_down.png", Orientacao.BAIXO);
+        sSeta.setPosicao(2, 5);
+        this.add(sSeta);        
 
         return this;
     }

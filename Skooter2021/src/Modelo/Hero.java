@@ -5,10 +5,6 @@ import java.util.ArrayList;
 
 import Auxiliar.Posicao;
 
-/**
- *
- * @author Junio
- */
 @SuppressWarnings("serial")
 public class Hero extends Animado implements Serializable {
 	public Hero(String sNomeImagePNG) {
@@ -30,21 +26,21 @@ public class Hero extends Animado implements Serializable {
 		Posicao posicao = new Posicao(0, 0);
 		Elemento elementoTemp;
 		switch (super.orientacao) {
-		case CIMA:
-			posicao.setPosicao(this.getPosicao().getLinha() - 1, this.getPosicao().getColuna());
-			break;
+		    case CIMA:
+			    posicao.setPosicao(this.getPosicao().getLinha() - 1, this.getPosicao().getColuna());
+			    break;
 
-		case BAIXO:
-			posicao.setPosicao(this.getPosicao().getLinha() + 1, this.getPosicao().getColuna());
-			break;
+		    case BAIXO:
+			    posicao.setPosicao(this.getPosicao().getLinha() + 1, this.getPosicao().getColuna());
+			    break;
 
-		case ESQUERDA:
-			posicao.setPosicao(this.getPosicao().getLinha(), this.getPosicao().getColuna() - 1);
-			break;
+		    case ESQUERDA:
+			    posicao.setPosicao(this.getPosicao().getLinha(), this.getPosicao().getColuna() - 1);
+			    break;
 
-		case DIREITA:
-			posicao.setPosicao(this.getPosicao().getLinha() - 1, this.getPosicao().getColuna() + 1);
-			break;
+		    case DIREITA:
+			    posicao.setPosicao(this.getPosicao().getLinha() - 1, this.getPosicao().getColuna() + 1);
+			    break;
 		}
 		
 		for(int i = 1; i < listaElementos.size(); i++) {
