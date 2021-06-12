@@ -72,7 +72,6 @@ public class Robo extends Animado{
     @Override
 	public void contatoTransponivel(ArrayList<Elemento> listaElementos) { 
 
-
         Fase fase = new Fase();
         listaElementos = fase.CriaFase1();
 
