@@ -221,5 +221,9 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
     public ArrayList<Elemento> getArrayElemento(){
        return this.eElementos; 
     }
+    
+    public void setFase(Fase fase) {
+    	this.eElementos = fase;
+    }
 
 }
