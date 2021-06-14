@@ -23,10 +23,11 @@ import Modelo.Hero;
 public class Tela extends javax.swing.JFrame implements MouseListener, KeyListener {
 
     private Hero hHero;
-    private Fase fase = new Fase();
+    private ArrayList<Fase> fases
     private ArrayList<Elemento> eElementos;
     private ControleDeJogo cControle = new ControleDeJogo();
     private Graphics g2;
+    private int faseAtual;
     /**
      * Creates new form
      */
@@ -41,8 +42,11 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         this.setSize(Consts.RES * Consts.CELL_SIDE + getInsets().left + getInsets().right,
                 Consts.RES * Consts.CELL_SIDE + getInsets().top + getInsets().bottom);
 
-        eElementos = fase.CriaFase1();
-        hHero = (Hero) fase.get(0);
+        
+        faseAtual = 0;
+        
+        this.fases.add(new Fase().CriaFase1());
+        this.fases.add(new Fase().CriaFase2());
     }
 
     public ArrayList<Elemento> getListaElementos(){
@@ -124,7 +128,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
 
             this.eElementos.clear();
-            eElementos = fase.CriaFase1();
+            eElementos = fase.CriaFase2();
         
             /*
             this.eElementos.clear();
@@ -222,8 +226,15 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
        return this.eElementos; 
     }
     
-    public void setFase(Fase fase) {
-    	this.eElementos = fase;
+    public void setFase(int novaFase) {
+    	this.fase.clear();
+    	this.eElementos = fases.get(novaFase);
+        hHero = (Hero) fase.get(0);
+        eElementos = fase.CriaFase1();
+    }
+    
+    public void setProximaFase(Fase proximaFase) {
+    	
     }
 
 }
