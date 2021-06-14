@@ -6,7 +6,6 @@ import java.util.Random;
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
 import Controler.ControleDeJogo;
-import Controler.Fase;
 
 public class Robo extends Animado {
 
@@ -73,8 +72,7 @@ public class Robo extends Animado {
 	@Override
 	public void contatoTransponivel(ArrayList<Elemento> listaElementos) {
         listaElementos.clear();
-        Desenhador.getTelaDoJogo().setFase(new Fase().CriaFase1());
-
+        Desenhador.getTelaDoJogo().setFase();
         return;
     }
 

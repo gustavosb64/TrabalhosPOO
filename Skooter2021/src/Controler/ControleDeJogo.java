@@ -6,7 +6,6 @@ import Auxiliar.Desenhador;
 import Auxiliar.Posicao;
 import Modelo.Animado;
 import Modelo.Elemento;
-import Modelo.Fruta;
 import Modelo.Hero;
 
 public class ControleDeJogo {
@@ -36,7 +35,8 @@ public class ControleDeJogo {
 		
 		if(!temFruta) {
 			e.clear();
-        	Desenhador.getTelaDoJogo().setFase(new Fase().CriaFase2());
+            Desenhador.getTelaDoJogo().setProximaFase();
+        	Desenhador.getTelaDoJogo().setFase();
 		}
 	}
 

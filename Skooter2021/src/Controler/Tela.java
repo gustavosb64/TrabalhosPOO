@@ -23,7 +23,7 @@ import Modelo.Hero;
 public class Tela extends javax.swing.JFrame implements MouseListener, KeyListener {
 
     private Hero hHero;
-    private ArrayList<Fase> fases
+    private ArrayList<Fase> fases = new ArrayList<Fase>();
     private ArrayList<Elemento> eElementos;
     private ControleDeJogo cControle = new ControleDeJogo();
     private Graphics g2;
@@ -47,6 +47,8 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         
         this.fases.add(new Fase().CriaFase1());
         this.fases.add(new Fase().CriaFase2());
+
+        this.setFase();
     }
 
     public ArrayList<Elemento> getListaElementos(){
@@ -127,8 +129,11 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             System.exit(0);
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
 
+            this.setFase();
+            /*
             this.eElementos.clear();
             eElementos = fase.CriaFase2();
+            */
         
             /*
             this.eElementos.clear();
@@ -226,15 +231,17 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
        return this.eElementos; 
     }
     
-    public void setFase(int novaFase) {
-    	this.fase.clear();
-    	this.eElementos = fases.get(novaFase);
-        hHero = (Hero) fase.get(0);
-        eElementos = fase.CriaFase1();
+    public void setFase() {
+
+        this.eElementos = this.fases.get(this.faseAtual);
+        hHero = (Hero) eElementos.get(0);
+
+        return;
     }
     
-    public void setProximaFase(Fase proximaFase) {
-    	
+    public void setProximaFase() {
+        this.faseAtual++;	
+        return;
     }
 
 }

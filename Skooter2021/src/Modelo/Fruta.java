@@ -2,6 +2,8 @@ package Modelo;
 
 import java.util.ArrayList;
 
+import Auxiliar.Desenhador;
+
 public class Fruta extends Elemento{
 	
 	private static final long serialVersionUID = 1L;
@@ -16,5 +18,11 @@ public class Fruta extends Elemento{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void contatoTransponivel(ArrayList<Elemento> listaElementos) {
+        Desenhador.getTelaDoJogo().setProximaFase();
+        Desenhador.getTelaDoJogo().setFase();
+    }
 	
 }
