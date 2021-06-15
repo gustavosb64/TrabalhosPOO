@@ -10,7 +10,7 @@ import Modelo.Hero;
 
 public class ControleDeJogo {
 	public void desenhaTudo(ArrayList<Elemento> ListElem) {
-		for (int i = ListElem.size()-1; i >= 0; i--) {
+		for (int i = ListElem.size() - 1; i >= 0; i--) {
 			ListElem.get(i).autoDesenho(ListElem, i);
 		}
 	}
@@ -23,20 +23,20 @@ public class ControleDeJogo {
 		/* Processa todos os demais em relacao ao heroi */
 		for (int i = 1; i < e.size(); i++) {
 			eTemp = e.get(i); /* Pega o i-esimo elemento do jogo */
-			if(eTemp.getClass().getSimpleName().equals("Fruta"))
+			if (eTemp.getClass().getSimpleName().equals("Fruta"))
 				temFruta = true;
 			/* Verifica se o heroi se sobrepoe ao i-ésimo elemento */
 			if (hHero.getPosicao().estaNaMesmaPosicao(eTemp.getPosicao())) {
 				if (eTemp.isbTransponivel() == true) {
-                    eTemp.contatoTransponivel(e);
+					eTemp.contatoTransponivel(e);
 				}
 			}
 		}
-		
-		if(!temFruta) {
+
+		if (!temFruta) {
 			e.clear();
-            Desenhador.getTelaDoJogo().setProximaFase();
-        	Desenhador.getTelaDoJogo().setFase();
+			Desenhador.getTelaDoJogo().setProximaFase();
+			Desenhador.getTelaDoJogo().setFase();
 		}
 	}
 
@@ -48,13 +48,21 @@ public class ControleDeJogo {
 				eTemp = e.get(i); // Pega o i-esimo elemento do jogo
 				if (!eTemp.isbTransponivel()) {
 					if (eTemp.getPosicao().estaNaMesmaPosicao(p)) {
-						if (index == 0 && eTemp.isMovel() == true) {
-							if(eTemp.contactHero((Animado) e.get(0), e)) {
-								if (!ehPosicaoValida(e, eTemp.getPosicao(), i)) {
-									eTemp.voltaAUltimaPosicao();
+						if (index == 0) {
+							if (eTemp.isMovel() == true) {
+								if (eTemp.contactHero((Animado) e.get(0), e)) {
+									if (!ehPosicaoValida(e, eTemp.getPosicao(), i)) {
+										eTemp.voltaAUltimaPosicao();
+										return false;
+									} else
+										return true;
+								} else
 									return false;
-								} else return true;
-							} else return false;
+							}
+							if (eTemp.getClass().getSimpleName().equals("Robo")) {
+								eTemp.contactHero((Animado) e.get(0), e);
+								return true;
+							}
 						}
 						return false;
 					}
@@ -73,7 +81,7 @@ public class ControleDeJogo {
 				if (!eTemp.isbTransponivel()) {
 					if (eTemp.getPosicao().estaNaMesmaPosicao(p)) {
 						return false;
-                    }
+					}
 				}
 			}
 		}

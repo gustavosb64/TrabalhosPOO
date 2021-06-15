@@ -42,7 +42,7 @@ public class Hero extends Animado implements Serializable {
 			    break;
 
 		    case DIREITA:
-			    posicao.setPosicao(this.getPosicao().getLinha() - 1, this.getPosicao().getColuna() + 1);
+			    posicao.setPosicao(this.getPosicao().getLinha(), this.getPosicao().getColuna() + 1);
 			    break;
 		}
 		

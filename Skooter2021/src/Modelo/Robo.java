@@ -15,7 +15,7 @@ public class Robo extends Animado {
 
 	public Robo(String sNomeImagePNG) {
 		super(sNomeImagePNG);
-		super.bTransponivel = true;
+		super.bTransponivel = false;
 		this.iContaFrames = 0;
 	}
 
@@ -65,15 +65,10 @@ public class Robo extends Animado {
 		return false;
 	}
 
-	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
-		return true;
-	}
-
 	@Override
-	public void contatoTransponivel(ArrayList<Elemento> listaElementos) {
+	public boolean contactHero(Animado heroi, ArrayList<Elemento> listaElementos) {
         listaElementos.clear();
         Desenhador.getTelaDoJogo().setFase();
-        return;
+        return true;
     }
-
 }
