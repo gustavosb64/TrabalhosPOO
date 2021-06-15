@@ -7,8 +7,11 @@ import Auxiliar.Posicao;
 
 @SuppressWarnings("serial")
 public class Hero extends Animado implements Serializable {
+    private int iVidas;
+
 	public Hero(String sNomeImagePNG) {
 		super(sNomeImagePNG);
+        this.iVidas = 2;
 	}
 
 	@Override
@@ -39,7 +42,7 @@ public class Hero extends Animado implements Serializable {
 			    break;
 
 		    case DIREITA:
-			    posicao.setPosicao(this.getPosicao().getLinha() - 1, this.getPosicao().getColuna() + 1);
+			    posicao.setPosicao(this.getPosicao().getLinha(), this.getPosicao().getColuna() + 1);
 			    break;
 		}
 		
@@ -51,7 +54,14 @@ public class Hero extends Animado implements Serializable {
 			}
 		}
 		
-		
 		return true;
 	}
+
+    public int getIVidas(){
+        return this.iVidas;
+    }
+
+    public void setIVidas(int vida){
+        this.iVidas = vida;
+    }
 }

@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
-import Modelo.CoronaVirus;
 import Modelo.Elemento;
 import Modelo.Hero;
 
@@ -24,10 +23,11 @@ import Modelo.Hero;
 public class Tela extends javax.swing.JFrame implements MouseListener, KeyListener {
 
     private Hero hHero;
-    private Fase fase = new Fase();
+//    private ArrayList<Fase> fases = new ArrayList<Fase>();
     private ArrayList<Elemento> eElementos;
     private ControleDeJogo cControle = new ControleDeJogo();
     private Graphics g2;
+    private int faseAtual;
     /**
      * Creates new form
      */
@@ -42,8 +42,19 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         this.setSize(Consts.RES * Consts.CELL_SIDE + getInsets().left + getInsets().right,
                 Consts.RES * Consts.CELL_SIDE + getInsets().top + getInsets().bottom);
 
-        eElementos = fase.CriaFase1();
-        hHero = (Hero) fase.get(0);
+        
+        this.faseAtual = 0;
+
+        /*
+        this.fases.add(new Fase().CriaFase1());
+        this.fases.add(new Fase().CriaFase2());
+        */
+
+        this.setFase();
+    }
+
+    public ArrayList<Elemento> getListaElementos(){
+        return this.eElementos;
     }
 
 /*--------------------------------------------------*/
@@ -116,8 +127,17 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             hHero.moveRight();
         } else if(e.getKeyCode() == KeyEvent.VK_SPACE) {
         	hHero.ataque(eElementos); 
+        } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            System.exit(0);
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
+
+            this.setFase();
+            /*
+            this.eElementos.clear();
+            eElementos = fase.CriaFase2();
+            */
         
+            /*
             this.eElementos.clear();
             hHero = new Hero("vacina.png");
             hHero.setPosicao(0, 7);
@@ -126,6 +146,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             CoronaVirus cTeste = new CoronaVirus("carro_azul.png");
             cTeste.setPosicao(5, 5);
             this.addElemento(cTeste);
+            */
         }
         
         /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/
@@ -210,6 +231,32 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
 
     public ArrayList<Elemento> getArrayElemento(){
        return this.eElementos; 
+    }
+    
+    public void setFase() {
+
+        /*
+         * Não funciona
+        this.eElementos = this.fases.get(this.faseAtual);
+        this.eElementos = new Fase().CriaFase1();
+        */
+        switch(this.faseAtual){
+            case 0:
+                this.eElementos = new Fase().CriaFase1();
+                break;
+            case 1:
+                this.eElementos = new Fase().CriaFase2();
+                break;
+        } 
+
+        hHero = (Hero) eElementos.get(0);
+
+        return;
+    }
+    
+    public void setProximaFase() {
+        this.faseAtual++;	
+        return;
     }
 
 }
