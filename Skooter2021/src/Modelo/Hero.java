@@ -25,7 +25,6 @@ public class Hero extends Animado implements Serializable {
 	}
 
 	public boolean ataque(ArrayList<Elemento> listaElementos) {
-		System.out.println("Entrei ");
 		Posicao posicao = new Posicao(0, 0);
 		Elemento elementoTemp;
 		switch (super.orientacao) {
@@ -49,7 +48,6 @@ public class Hero extends Animado implements Serializable {
 		for(int i = 1; i < listaElementos.size(); i++) {
 			elementoTemp = listaElementos.get(i);           
 			if(elementoTemp.getPosicao().estaNaMesmaPosicao(posicao)) {
-				System.out.println("Apertei");
 				elementoTemp.contatoComAtaque(listaElementos, this.orientacao, i);
 			}
 		}

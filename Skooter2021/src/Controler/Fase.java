@@ -10,7 +10,9 @@ import Modelo.Coracao;
 import Modelo.Elemento;
 import Modelo.Fruta;
 import Modelo.Hero;
+import Modelo.Orientacao;
 import Modelo.Robo;
+import Modelo.Seta;
 
 @SuppressWarnings("serial")
 public class Fase extends ArrayList<Elemento>{
@@ -108,13 +110,33 @@ public class Fase extends ArrayList<Elemento>{
         this.add(hHero);
         
         Fruta banana = new Fruta("fruta_banana.png");
-        banana.setPosicao(6, 6);
+        banana.setPosicao(6, 8);
         this.add(banana);
         
         
         BlocoEstatico bloco = new BlocoEstatico("bloco_vermelho_liso.png");
         bloco.setPosicao(1, 3);
         this.add(bloco);
+        
+        BlocoEstatico blocoEs = new BlocoEstatico("bloco_vermelho_liso.png");
+        blocoEs.setPosicao(5, 5);
+        this.add(blocoEs);
+        
+        BlocoEstatico blocoEs2 = new BlocoEstatico("bloco_vermelho_liso.png");
+        blocoEs2.setPosicao(6, 4);
+        this.add(blocoEs2);
+
+        Robo cRobo4 = new Robo("robo_azul.png");
+        cRobo4.setPosicao(6, 5);        
+        this.add(cRobo4);
+        
+        BlocoEstatico blocoEs3 = new BlocoEstatico("bloco_vermelho_liso.png");
+        blocoEs3.setPosicao(6, 6);
+        this.add(blocoEs3);
+
+        BlocoVerdePrisma blocoverde1 = new BlocoVerdePrisma("bloco_verde.png");
+        blocoverde1.setPosicao(7, 5);
+        this.add(blocoverde1);
         
         BlocoVerdePrisma bloco3 = new BlocoVerdePrisma("bloco_verde.png");
         bloco3.setPosicao(5, 2);
@@ -132,6 +154,17 @@ public class Fase extends ArrayList<Elemento>{
         cRobo.setPosicao(7, 2);        
         this.add(cRobo);
         
+        Seta cSeta1 = new Seta("seta_cima.png", Orientacao.CIMA);
+        cSeta1.setPosicao(3, 5);        
+        this.add(cSeta1);
+
+        Seta cSeta2 = new Seta("seta_cima.png", Orientacao.CIMA);
+        cSeta2.setPosicao(6, 5);        
+        this.add(cSeta2);
+
+        Seta cSeta3 = new Seta("seta_cima.png", Orientacao.CIMA);
+        cSeta3.setPosicao(3, 5);        
+        this.add(cSeta3);
         return this;
     }
 
