@@ -28,7 +28,7 @@ public class Coracao extends Animado{
         this.direction = randGen.nextInt(4);
 
         this.iContaFrames++;
-        if(this.iContaFrames == Consts.TIMER_ROBO){
+        if(this.iContaFrames == Consts.TIMER_CORACAO){
             switch (this.direction){
                 case 0:
                     if (!this.moveUp()){

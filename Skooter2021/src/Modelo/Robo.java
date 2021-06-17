@@ -67,8 +67,7 @@ public class Robo extends Animado {
 
 	@Override
 	public boolean contactHero(Animado heroi, ArrayList<Elemento> listaElementos) {
-        listaElementos.clear();
-        Desenhador.getTelaDoJogo().setFase();
+        listaElementos = Desenhador.getTelaDoJogo().setFase();
         return true;
     }
 }
