@@ -63,6 +63,7 @@ public class ControleDeJogo {
 								eTemp.contactHero((Animado) e.get(0), e);
 								return true;
 							}
+                            else return false;
 						}
 						return false;
 					}
