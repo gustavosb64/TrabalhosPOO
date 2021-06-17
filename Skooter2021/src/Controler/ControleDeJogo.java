@@ -34,13 +34,15 @@ public class ControleDeJogo {
 		}
 
 		if (!temFruta) {
-			e.clear();
+            e.clear();
 			Desenhador.getTelaDoJogo().setProximaFase();
 			Desenhador.getTelaDoJogo().setFase();
 		}
 	}
 
+    //Função usada por ehPosicaoValida
 	private boolean ehPosicaoValidaHeroi(ArrayList<Elemento> e, Elemento eTemp, int i) {
+
         //Caso o eTemp seja um bloco móvel:
 		if (eTemp.isMovel() == true) {
 			if (eTemp.contactHero((Animado) e.get(0), e)) {
@@ -60,6 +62,7 @@ public class ControleDeJogo {
         return false;
     }
 
+    //Função usada por ehPosicaoValida
 	private boolean ehPosicaoValidaRobo(ArrayList<Elemento> e, Animado robo, int eTempIndex) {
 
         //Caso não seja o heroi, não faz nada
@@ -81,14 +84,13 @@ public class ControleDeJogo {
 
                         //Caso quem tenha chamado a função seja o heroi:
     				    if (index == 0) return ehPosicaoValidaHeroi(e, eTemp, i);
-                        return false;
+                        else return false;
 
 				    }
                     //Caso quem tenha chamado a função seja um robô:
 			        else if (e.get(index).getClass().getSimpleName().equals("Robo")){
                         return ehPosicaoValidaRobo(e, (Animado) e.get(index), i);
                     }
-                
                 }
             }
 		}
