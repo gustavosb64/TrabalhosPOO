@@ -233,7 +233,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
        return this.eElementos; 
     }
     
-    public void setFase() {
+    public ArrayList<Elemento> setFase() {
 
         /*
          * Não funciona
@@ -251,7 +251,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
 
         hHero = (Hero) eElementos.get(0);
 
-        return;
+        return this.eElementos;
     }
     
     public void setProximaFase() {

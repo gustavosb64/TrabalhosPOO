@@ -25,28 +25,28 @@ public class Seta extends Elemento{
 		switch (super.orientacao) {
 		    case CIMA:
                 hHeroi.moveUp();
-                if (!cControle.ehPosicaoValidaSeta(ListElem,hHeroi.getPosicao(),0)) 
+                if (!cControle.ehPosicaoValida(ListElem,hHeroi.getPosicao(),0)) 
                     hHeroi.voltaAUltimaPosicao();
 
 			    break;
 
 		    case BAIXO:
                 hHeroi.moveDown();
-                if (!cControle.ehPosicaoValidaSeta(ListElem,hHeroi.getPosicao(),0)) 
+                if (!cControle.ehPosicaoValida(ListElem,hHeroi.getPosicao(),0)) 
                     hHeroi.voltaAUltimaPosicao();
 
 			    break;
 
 		    case ESQUERDA:
                 hHeroi.moveLeft();
-                if (!cControle.ehPosicaoValidaSeta(ListElem,hHeroi.getPosicao(),0)) 
+                if (!cControle.ehPosicaoValida(ListElem,hHeroi.getPosicao(),0)) 
                     hHeroi.voltaAUltimaPosicao();
 
 			    break;
 
 		    case DIREITA:
                 hHeroi.moveRight();
-                if (!cControle.ehPosicaoValidaSeta(ListElem,hHeroi.getPosicao(),0)) 
+                if (!cControle.ehPosicaoValida(ListElem,hHeroi.getPosicao(),0)) 
                     hHeroi.voltaAUltimaPosicao();
 
 			    break;
