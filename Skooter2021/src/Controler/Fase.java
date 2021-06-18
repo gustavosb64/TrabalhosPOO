@@ -2,8 +2,8 @@ package Controler;
 
 import java.util.ArrayList;
 
-import Modelo.BlocoAnimado;
-import Modelo.BlocoEstatico;
+import Modelo.BlocoVermelhoPrisma;
+import Modelo.BlocoVermelhoLiso;
 import Modelo.BlocoVerdeLiso;
 import Modelo.BlocoVerdePrisma;
 import Modelo.Coracao;
@@ -43,7 +43,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco0_1.setPosicao(0, 1);
         this.add(bloco0_1);
         
-        BlocoEstatico bloco0_2 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco0_2 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco0_2.setPosicao(1, 1);
         this.add(bloco0_2);
         
@@ -51,7 +51,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco1_2.setPosicao(1, 2);
         this.add(bloco1_2);
         
-        BlocoEstatico bloco1_3 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco1_3 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco1_3.setPosicao(1, 3);
         this.add(bloco1_3);
         
@@ -59,7 +59,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco2_1.setPosicao(2, 1);
         this.add(bloco2_1);
         
-        BlocoEstatico bloco3_1 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco3_1 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco3_1.setPosicao(3, 1);
         this.add(bloco3_1);
         
@@ -71,7 +71,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco4_1.setPosicao(4, 1);
         this.add(bloco4_1);
         
-        BlocoEstatico bloco5_2 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco5_2 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco5_2.setPosicao(5, 1);
         this.add(bloco5_2);
         
@@ -79,11 +79,11 @@ public class Fase extends ArrayList<Elemento>{
         bloco5_3.setPosicao(5, 2);
         this.add(bloco5_3);
         
-        BlocoEstatico bloco5_4 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco5_4 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco5_4.setPosicao(5, 3);
         this.add(bloco5_4);
         
-        BlocoEstatico bloco3_3 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco3_3 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco3_3.setPosicao(3, 3);
         this.add(bloco3_3);
         
@@ -91,7 +91,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco0_5.setPosicao(0, 5);
         this.add(bloco0_5);
         
-        BlocoEstatico bloco1_5 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco1_5 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco1_5.setPosicao(1, 5);
         this.add(bloco1_5);
         
@@ -99,23 +99,23 @@ public class Fase extends ArrayList<Elemento>{
         bloco2_5.setPosicao(2, 5);
         this.add(bloco2_5);
         
-        BlocoEstatico bloco3_5 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco3_5 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco3_5.setPosicao(3, 5);
         this.add(bloco3_5);
         
-        BlocoEstatico bloco7_1 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco7_1 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco7_1.setPosicao(7, 1);
         this.add(bloco7_1);
         
-        BlocoEstatico bloco7_3 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco7_3 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco7_3.setPosicao(7, 3);
         this.add(bloco7_3);
         
-        BlocoEstatico bloco7_5 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco7_5 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco7_5.setPosicao(7, 5);
         this.add(bloco7_5);
         
-        BlocoEstatico bloco7_7 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco7_7 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco7_7.setPosicao(7, 7);
         this.add(bloco7_7);
         
@@ -123,7 +123,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco7_8.setPosicao(7, 8);
         this.add(bloco7_8);
         
-        BlocoEstatico bloco7_9 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco7_9 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco7_9.setPosicao(7, 9);
         this.add(bloco7_9);
         
@@ -140,7 +140,7 @@ public class Fase extends ArrayList<Elemento>{
         this.add(bloco8_9);
         
         
-        BlocoEstatico bloco9_1 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco9_1 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco9_1.setPosicao(9, 1);
         this.add(bloco9_1);
         
@@ -148,11 +148,11 @@ public class Fase extends ArrayList<Elemento>{
         bloco9_2.setPosicao(9, 2);
         this.add(bloco9_2);
         
-        BlocoEstatico bloco9_3 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco9_3 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco9_3.setPosicao(9, 3);
         this.add(bloco9_3);
         
-        BlocoEstatico bloco9_5 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco9_5 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco9_5.setPosicao(9, 5);
         this.add(bloco9_5);
         
@@ -160,7 +160,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco9_6.setPosicao(9, 6);
         this.add(bloco9_6);
         
-        BlocoEstatico bloco9_7 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco9_7 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco9_7.setPosicao(9, 7);
         this.add(bloco9_7);
         
@@ -168,11 +168,11 @@ public class Fase extends ArrayList<Elemento>{
         bloco9_8.setPosicao(9, 8);
         this.add(bloco9_8);
         
-        BlocoEstatico bloco9_9 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco9_9 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco9_9.setPosicao(9, 9);
         this.add(bloco9_9);
         
-        BlocoEstatico bloco1_7 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco1_7 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco1_7.setPosicao(1, 7);
         this.add(bloco1_7);
         
@@ -180,7 +180,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco1_8.setPosicao(1, 8);
         this.add(bloco1_8);
         
-        BlocoEstatico bloco1_9 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco1_9 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco1_9.setPosicao(1, 9);
         this.add(bloco1_9);
         
@@ -192,7 +192,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco6_5.setPosicao(6,5);
         this.add(bloco6_5);
         
-        BlocoEstatico bloco5_5 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco5_5 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco5_5.setPosicao(5, 5);
         this.add(bloco5_5);
         
@@ -200,7 +200,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco5_6.setPosicao(5,6);
         this.add(bloco5_6);
         
-        BlocoEstatico bloco5_7 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco5_7 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco5_7.setPosicao(5, 7);
         this.add(bloco5_7);
         
@@ -208,7 +208,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco6_7.setPosicao(6,7);
         this.add(bloco6_7);
         
-        BlocoEstatico bloco3_7 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco3_7 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco3_7.setPosicao(3, 7);
         this.add(bloco3_7);
         
@@ -216,7 +216,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco3_8.setPosicao(3,8);
         this.add(bloco3_8);
         
-        BlocoEstatico bloco3_9 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco3_9 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco3_9.setPosicao(3, 9);
         this.add(bloco3_9);
         
@@ -224,7 +224,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco4_9.setPosicao(4,9);
         this.add(bloco4_9);
         
-        BlocoEstatico bloco5_9 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco5_9 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco5_9.setPosicao(5,9);
         this.add(bloco5_9);
         
@@ -252,23 +252,27 @@ public class Fase extends ArrayList<Elemento>{
         this.add(banana);
         
         
-        BlocoEstatico bloco = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso bloco = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         bloco.setPosicao(1, 3);
         this.add(bloco);
         
-        BlocoEstatico blocoEs = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso blocoEs = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         blocoEs.setPosicao(5, 5);
         this.add(blocoEs);
         
-        BlocoEstatico blocoEs2 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso blocoEs2 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         blocoEs2.setPosicao(6, 4);
         this.add(blocoEs2);
+        
+        BlocoVermelhoPrisma blocou2 = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+        blocou2.setPosicao(3, 3);
+        this.add(blocou2);
 
         Robo cRobo4 = new Robo("robo_azul.png");
         cRobo4.setPosicao(6, 5);        
         this.add(cRobo4);
         
-        BlocoEstatico blocoEs3 = new BlocoEstatico("bloco_vermelho_liso.png");
+        BlocoVermelhoLiso blocoEs3 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
         blocoEs3.setPosicao(6, 6);
         this.add(blocoEs3);
 
@@ -284,7 +288,7 @@ public class Fase extends ArrayList<Elemento>{
         bloco4.setPosicao(6, 2);
         this.add(bloco4);
         
-        BlocoAnimado bloco2 = new BlocoAnimado("bloco_vermelho_liso.png");
+        BlocoVermelhoPrisma bloco2 = new BlocoVermelhoPrisma("bloco_vermelho_liso.png");
         bloco2.setPosicao(3, 5);
         this.add(bloco2);  
 

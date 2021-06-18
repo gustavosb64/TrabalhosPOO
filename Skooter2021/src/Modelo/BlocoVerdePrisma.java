@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import Controler.ControleDeJogo;
 
-public class BlocoVerdePrisma extends BlocoAnimado {
+public class BlocoVerdePrisma extends BlocoVermelhoPrisma {
 
 	private static final long serialVersionUID = 1L;
 
