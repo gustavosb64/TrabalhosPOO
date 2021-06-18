@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import Modelo.BlocoAnimado;
 import Modelo.BlocoEstatico;
+import Modelo.BlocoVerdeLiso;
 import Modelo.BlocoVerdePrisma;
 import Modelo.Coracao;
 import Modelo.Elemento;
@@ -278,6 +279,10 @@ public class Fase extends ArrayList<Elemento>{
         BlocoVerdePrisma bloco3 = new BlocoVerdePrisma("bloco_verde.png");
         bloco3.setPosicao(5, 2);
         this.add(bloco3);
+        
+        BlocoVerdeLiso bloco4 = new BlocoVerdeLiso("bloco_verde_liso.png");
+        bloco4.setPosicao(6, 2);
+        this.add(bloco4);
         
         BlocoAnimado bloco2 = new BlocoAnimado("bloco_vermelho_liso.png");
         bloco2.setPosicao(3, 5);
