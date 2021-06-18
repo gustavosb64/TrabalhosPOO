@@ -22,9 +22,21 @@ public class Fase extends ArrayList<Elemento>{
         hHero.setPosicao(6, 4);
         this.add(hHero);
         
+        Coracao coracao = new Coracao("heart.png");
+        coracao.setPosicao(4, 4);
+        this.add(coracao);
+        
         Fruta banana = new Fruta("fruta_banana.png");
         banana.setPosicao(0, 0);
         this.add(banana);
+        
+        Fruta banana2 = new Fruta("fruta_banana.png");
+        banana2.setPosicao(2, 2);
+        this.add(banana2);
+        
+        Fruta banana3 = new Fruta("fruta_banana.png");
+        banana3.setPosicao(4, 3);
+        this.add(banana3);
         
         BlocoVerdePrisma bloco0_1 = new BlocoVerdePrisma("bloco_verde.png");
         bloco0_1.setPosicao(0, 1);

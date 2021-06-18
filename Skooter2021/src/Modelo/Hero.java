@@ -62,4 +62,5 @@ public class Hero extends Animado implements Serializable {
     public void setIVidas(int vida){
         this.iVidas = vida;
     }
+   
 }

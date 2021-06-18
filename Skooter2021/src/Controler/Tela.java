@@ -28,6 +28,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
     private ControleDeJogo cControle = new ControleDeJogo();
     private Graphics g2;
     private int faseAtual;
+    private int vidasHeroi;
     /**
      * Creates new form
      */
@@ -44,16 +45,21 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
 
         
         this.faseAtual = 0;
+        this.vidasHeroi = 2;
 
-        /*
-        this.fases.add(new Fase().CriaFase1());
-        this.fases.add(new Fase().CriaFase2());
-        */
 
         this.setFase();
     }
 
-    public ArrayList<Elemento> getListaElementos(){
+    public int getVidasHeroi() {
+		return vidasHeroi;
+	}
+
+	public void setVidasHeroi(int vidasHeroi) {
+		this.vidasHeroi = vidasHeroi;
+	}
+
+	public ArrayList<Elemento> getListaElementos(){
         return this.eElementos;
     }
 
@@ -62,7 +68,23 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         eElementos.add(umElemento);
     }
 
-    public void removeElemento(Elemento umElemento) {
+    public Hero gethHero() {
+		return hHero;
+	}
+
+	public ArrayList<Elemento> geteElementos() {
+		return eElementos;
+	}
+
+	public ControleDeJogo getcControle() {
+		return cControle;
+	}
+
+	public Graphics getG2() {
+		return g2;
+	}
+
+	public void removeElemento(Elemento umElemento) {
         eElementos.remove(umElemento);
     }
 
@@ -232,6 +254,10 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
     public ArrayList<Elemento> getArrayElemento(){
        return this.eElementos; 
     }
+    
+    public int getFaseAtual() {
+		return faseAtual;
+	}
     
     public ArrayList<Elemento> setFase() {
 
