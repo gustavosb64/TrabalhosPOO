@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import Auxiliar.Posicao;
 
-public class BlocoAnimado extends Animado {
+public class BlocoVermelhoPrisma extends Animado {
 	private static final long serialVersionUID = 1L;
 
 	protected boolean bDestrutivel;
 	
-	public BlocoAnimado(String sNomeImagePNG) {
+	public BlocoVermelhoPrisma(String sNomeImagePNG) {
 		super(sNomeImagePNG);
 		super.bTransponivel = false;
 		super.bMovel = true;

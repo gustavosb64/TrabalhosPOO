@@ -4,15 +4,14 @@ import java.util.ArrayList;
 
 import Controler.ControleDeJogo;
 
-public class BlocoVerdePrisma extends BlocoVermelhoPrisma {
+public class BlocoVerdeLiso extends BlocoVermelhoLiso {
 
 	private static final long serialVersionUID = 1L;
 
-	public BlocoVerdePrisma(String sNomeImagePNG) {
+	public BlocoVerdeLiso(String sNomeImagePNG) {
 		super(sNomeImagePNG);
-		super.bDestrutivel = true;
 	}
-
+	
 	@Override
 	public void contatoComAtaque(ArrayList<Elemento> ListElem, Orientacao orientacao, int index) {
 		ControleDeJogo cControle = new ControleDeJogo();

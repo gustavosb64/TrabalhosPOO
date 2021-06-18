@@ -2,11 +2,11 @@ package Modelo;
 
 import java.util.ArrayList;
 
-public class BlocoEstatico extends Elemento{
+public class BlocoVermelhoLiso extends Elemento{
 
 	private static final long serialVersionUID = 1L;
 
-	public BlocoEstatico(String sNomeImagePNG) {
+	public BlocoVermelhoLiso(String sNomeImagePNG) {
 		super(sNomeImagePNG);
 		super.bTransponivel = false;
 		// TODO Auto-generated constructor stub
