@@ -45,7 +45,10 @@ public class ControleDeJogo {
 		}
 	}
 
+
+    //Função usada por ehPosicaoValida
 	private boolean ehPosicaoValidaHeroi(ArrayList<Elemento> e, Elemento eTemp, int i) {
+
         //Caso o eTemp seja um bloco móvel:
 		if (eTemp.isMovel() == true) {
 			if (eTemp.contactHero((Animado) e.get(0), e)) {
@@ -65,6 +68,7 @@ public class ControleDeJogo {
         return false;
     }
 
+    //Função usada por ehPosicaoValida
 	private boolean ehPosicaoValidaRobo(ArrayList<Elemento> e, Animado robo, int eTempIndex) {
 
         //Caso não seja o heroi, não faz nada
@@ -86,7 +90,7 @@ public class ControleDeJogo {
 
                         //Caso quem tenha chamado a função seja o heroi:
     				    if (index == 0) return ehPosicaoValidaHeroi(e, eTemp, i);
-                        return false;
+                        else return false;
 
 				    }
                     //Caso quem tenha chamado a função seja um robô:
