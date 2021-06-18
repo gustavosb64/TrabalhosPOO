@@ -23,7 +23,6 @@ import Modelo.Hero;
 public class Tela extends javax.swing.JFrame implements MouseListener, KeyListener {
 
     private Hero hHero;
-//    private ArrayList<Fase> fases = new ArrayList<Fase>();
     private ArrayList<Elemento> eElementos;
     private ControleDeJogo cControle = new ControleDeJogo();
     private Graphics g2;
@@ -261,11 +260,6 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
     
     public ArrayList<Elemento> setFase() {
 
-        /*
-         * Não funciona
-        this.eElementos = this.fases.get(this.faseAtual);
-        this.eElementos = new Fase().CriaFase1();
-        */
         switch(this.faseAtual){
             case 0:
                 this.eElementos = new Fase().CriaFase1();
@@ -273,6 +267,15 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             case 1:
                 this.eElementos = new Fase().CriaFase2();
                 break;
+            case 2:
+                this.eElementos = new Fase().CriaFase3();
+                break;
+            case 3:
+                this.eElementos = new Fase().CriaFase4();
+                break;
+            case 4:
+                System.out.println("FIM DE JOGO!");
+                System.exit(0);
         } 
 
         hHero = (Hero) eElementos.get(0);
