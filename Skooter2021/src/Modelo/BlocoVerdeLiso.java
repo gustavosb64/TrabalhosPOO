@@ -17,5 +17,4 @@ public class BlocoVerdeLiso extends BlocoVermelhoLiso {
 		ControleDeJogo cControle = new ControleDeJogo();
 		ListElem.remove(this);
 	}
-
 }

@@ -41,7 +41,6 @@ public class ControleDeJogo {
 
 		if (!temFruta) {
 			Desenhador.getTelaDoJogo().setProximaFase();
-			Desenhador.getTelaDoJogo().setFase();
 		}
 	}
 
