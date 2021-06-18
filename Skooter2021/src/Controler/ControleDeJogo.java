@@ -6,9 +6,11 @@ import Auxiliar.Desenhador;
 import Auxiliar.Posicao;
 import Modelo.Animado;
 import Modelo.Elemento;
+import Modelo.Fruta;
 import Modelo.Hero;
 
 public class ControleDeJogo {
+	
 	public void desenhaTudo(ArrayList<Elemento> ListElem) {
 		for (int i = ListElem.size() - 1; i >= 0; i--) {
 			ListElem.get(i).autoDesenho(ListElem, i);
@@ -23,8 +25,7 @@ public class ControleDeJogo {
 		/* Processa todos os demais em relacao ao heroi */
 		for (int i = 1; i < e.size(); i++) {
 			eTemp = e.get(i); /* Pega o i-esimo elemento do jogo */
-			if (eTemp.getClass().getSimpleName().equals("Fruta"))
-				temFruta = true;
+			
 			/* Verifica se o heroi se sobrepoe ao i-ésimo elemento */
 			if (hHero.getPosicao().estaNaMesmaPosicao(eTemp.getPosicao())) {
 				if (eTemp.isbTransponivel() == true) {
@@ -32,12 +33,18 @@ public class ControleDeJogo {
 				}
 			}
 		}
+		
+		for (Elemento elemento : e) {
+			if (elemento instanceof Fruta)
+				temFruta = true;
+		}
 
 		if (!temFruta) {
 			Desenhador.getTelaDoJogo().setProximaFase();
 			Desenhador.getTelaDoJogo().setFase();
 		}
 	}
+
 
     //Função usada por ehPosicaoValida
 	private boolean ehPosicaoValidaHeroi(ArrayList<Elemento> e, Elemento eTemp, int i) {

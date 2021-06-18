@@ -21,8 +21,7 @@ public class Fruta extends Elemento{
 
 	@Override
 	public void contatoTransponivel(ArrayList<Elemento> listaElementos) {
-        Desenhador.getTelaDoJogo().setProximaFase();
-        Desenhador.getTelaDoJogo().setFase();
+       super.contatoTransponivel(listaElementos);
     }
 	
 }

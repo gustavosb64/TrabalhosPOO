@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import Auxiliar.Consts;
+import Auxiliar.Desenhador;
 
 @SuppressWarnings("serial")
 public class Coracao extends Animado{
@@ -67,10 +68,11 @@ public class Coracao extends Animado{
 
     @Override
 	public void contatoTransponivel(ArrayList<Elemento> listaElementos) { 
-        Hero heroi = (Hero) listaElementos.get(0);
-        heroi.setIVidas(heroi.getIVidas()+1);
+        int vidasHeroi =  Desenhador.getTelaDoJogo().getVidasHeroi();
+        Desenhador.getTelaDoJogo().setVidasHeroi(vidasHeroi + 1);
+       
 
-	    listaElementos.remove(this);
+	    listaElementos.remove(this);	    
         return;
     }
 
