@@ -10,13 +10,7 @@ public class Fruta extends Elemento{
 
 	public Fruta(String sNomeImagePNG) {
 		super(sNomeImagePNG);
-		super.setbTransponivel(true);
-	}
-
-	@Override
-	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
-		// TODO Auto-generated method stub
-		return false;
+		super.bTransponivel = true;
 	}
 
 	@Override

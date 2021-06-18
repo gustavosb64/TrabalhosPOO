@@ -52,10 +52,6 @@ public abstract class Elemento implements Serializable {
         return bTransponivel;
     }
 
-    public void setbTransponivel(boolean bTransponivel) {
-        this.bTransponivel = bTransponivel;
-    }
-
     public boolean setPosicao(int linha, int coluna) {
         return pPosicao.setPosicao(linha, coluna);
     }
@@ -64,7 +60,9 @@ public abstract class Elemento implements Serializable {
         Desenhador.desenhar(this.iImage, pPosicao.getColuna(), pPosicao.getLinha());        
     }   
 
-    public abstract boolean contactHero(Animado hHeroi, ArrayList<Elemento> e);
+    public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
+    	return false;
+    }
  
     public void voltaAUltimaPosicao(){
         this.pPosicao.volta();
@@ -89,23 +87,10 @@ public abstract class Elemento implements Serializable {
     }
     
     public void contatoComAtaque(ArrayList<Elemento> listaElementos, Orientacao orientacao, int index) {
-    	
+    	return;
     }
 
-    public int getIndex(ArrayList<Elemento> ListElem){
-
-        for (int i = 0; i < ListElem.size(); i++){
-            if (this.pPosicao == ListElem.get(i).getPosicao())
-                return i;
-        }
-     
-        return -1;
-    }
-
-	public void contatoComAtaque(ArrayList<Elemento> listaElementos) {
-		// TODO Auto-generated method stub
-	}
-
+    //Remove elementos transponíveis da tela 
 	public void contatoTransponivel(ArrayList<Elemento> listaElementos) { 
 	    listaElementos.remove(this);
         return;
