@@ -314,4 +314,212 @@ public class Fase extends ArrayList<Elemento>{
         return this;
     }
 
+    public Fase CriaFase3(){
+
+        Hero hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+        hHero.setPosicao(6, 4);
+        this.add(hHero);
+        
+        //Colocando blocos vermelhos com prisma
+        BlocoVermelhoPrisma BVmP; 
+        for (int i=1; i<10; i++){
+            BVmP = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+            BVmP.setPosicao(i, 1);
+            this.add(BVmP);
+        }
+        for (int i=1; i<10; i++){
+            BVmP = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+            BVmP.setPosicao(i, 9);
+            this.add(BVmP);
+        }
+        for (int i=2; i<9; i++){
+            BVmP = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+            BVmP.setPosicao(1, i);
+            this.add(BVmP);
+        }
+        for (int i=2; i<9; i++){
+            BVmP = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+            BVmP.setPosicao(9, i);
+            this.add(BVmP);
+        }
+
+        for (int i=3; i<8; i++){
+            BVmP = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+            BVmP.setPosicao(3, i);
+            this.add(BVmP);
+        }
+
+        for (int i=3; i<8; i++){
+            BVmP = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+            BVmP.setPosicao(7, i);
+            this.add(BVmP);
+        }
+        for (int i=4; i<7; i++){
+            BVmP = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+            BVmP.setPosicao(i, 3);
+            this.add(BVmP);
+        }
+    
+        for (int i=4; i<7; i++){
+            BVmP = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
+            BVmP.setPosicao(i, 7);
+            this.add(BVmP);
+        }
+
+        //Colocando frutas
+        Fruta fruta;
+        fruta = new Fruta("fruta_banana.png");
+        fruta.setPosicao(5, 0);
+        this.add(fruta);
+
+        fruta = new Fruta("fruta_cereja.png");
+        fruta.setPosicao(5, 2);
+        this.add(fruta);
+        
+        fruta = new Fruta("fruta_banana.png");
+        fruta.setPosicao(5, 8);
+        this.add(fruta);
+
+        fruta = new Fruta("fruta_morango.png");
+        fruta.setPosicao(5, 10);
+        this.add(fruta);
+
+        //Colocando robôs
+        Robo robo;
+        robo = new Robo("robo_azul.png");
+        robo.setPosicao(0, 5);
+        this.add(robo);
+
+        robo = new Robo("robo_azul.png");
+        robo.setPosicao(2, 5);
+        this.add(robo);
+
+        robo = new Robo("robo_azul.png");
+        robo.setPosicao(8, 5);
+        this.add(robo);
+
+        robo = new Robo("robo_azul.png");
+        robo.setPosicao(10, 5);
+        this.add(robo);
+
+        return this;
+    }
+
+    public Fase CriaFase4(){
+
+        Hero hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+        hHero.setPosicao(4, 5);
+        this.add(hHero);
+        
+        //Colocando blocos verdes lisos
+        BlocoVerdeLiso BVdL; 
+        for (int i=1; i<10; i+=2){
+            for (int j=1; j<10; j+=2){
+                BVdL = new BlocoVerdeLiso("bloco_verde_liso.png");
+                BVdL.setPosicao(i, j);
+                this.add(BVdL);
+                }
+        }
+        for (int i=2; i<9; i+=2){
+            for (int j=2; j<9; j+=2){
+                BVdL = new BlocoVerdeLiso("bloco_verde_liso.png");
+                BVdL.setPosicao(i, j);
+                this.add(BVdL);
+                }
+        }
+
+        //Colocando robôs
+        Robo robo;
+        robo = new Robo("robo_azul.png");
+        robo.setPosicao(0, 5);
+        this.add(robo);
+
+        robo = new Robo("robo_amarelo.png");
+        robo.setPosicao(10, 5);
+        this.add(robo);
+
+        robo = new Robo("robo_amarelo.png");
+        robo.setPosicao(5, 0);
+        this.add(robo);
+
+        robo = new Robo("robo_azul.png");
+        robo.setPosicao(5, 10);
+        this.add(robo);
+
+        //Colocando frutas
+        Fruta fruta;
+        fruta = new Fruta("fruta_banana.png");
+        fruta.setPosicao(0, 0);
+        this.add(fruta);
+
+        fruta = new Fruta("fruta_cereja.png");
+        fruta.setPosicao(10, 0);
+        this.add(fruta);
+        
+        fruta = new Fruta("fruta_banana.png");
+        fruta.setPosicao(0, 10);
+        this.add(fruta);
+
+        fruta = new Fruta("fruta_morango.png");
+        fruta.setPosicao(10, 10);
+        this.add(fruta);
+
+        //Colocando blocos vermelhos lisos
+        BlocoVermelhoLiso BVmL;
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(0, 3);
+        this.add(BVmL);
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(0, 7);
+        this.add(BVmL);
+
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(1, 0);
+        this.add(BVmL);
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(1, 8);
+        this.add(BVmL);
+
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(2, 5);
+        this.add(BVmL);
+
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(3, 2);
+        this.add(BVmL);
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(3, 10);
+        this.add(BVmL);
+
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(5, 2);
+        this.add(BVmL);
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(5, 8);
+        this.add(BVmL);
+
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(6, 3);
+        this.add(BVmL);
+
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(7, 0);
+        this.add(BVmL);
+
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(8, 1);
+        this.add(BVmL);
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(8, 7);
+        this.add(BVmL);
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(8, 10);
+        this.add(BVmL);
+
+        BVmL = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        BVmL.setPosicao(10, 1);
+        this.add(BVmL);
+
+        return this;
+    }
 }
