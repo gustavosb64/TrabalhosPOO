@@ -5,12 +5,17 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
@@ -26,10 +31,18 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
     private Graphics g2;
     private int faseAtual;
     private int vidasHeroi;
+    
    
-    public Tela() {
+    public Tela() throws Exception {
     	this.faseAtual = 0;
         this.vidasHeroi = 2;
+        
+        File caminhoMusica  = new File("."+File.separator+"music"+File.separator+"ost.wav");
+        System.out.println(caminhoMusica.toString());
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(caminhoMusica);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+        clip.start();
         
         Desenhador.setCenario(this); /*Desenhador funciona no modo estatico*/
         initComponents();
