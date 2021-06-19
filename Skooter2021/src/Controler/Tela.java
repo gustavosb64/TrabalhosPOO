@@ -38,7 +38,6 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
         this.vidasHeroi = 2;
         
         File caminhoMusica  = new File("."+File.separator+"music"+File.separator+"ost.wav");
-        System.out.println(caminhoMusica.toString());
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(caminhoMusica);
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);

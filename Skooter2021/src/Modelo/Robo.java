@@ -64,7 +64,6 @@ public class Robo extends Animado {
 	@Override
 	public boolean contactHero(Animado heroi, ArrayList<Elemento> listaElementos) {
 		int vidasHeroi = Desenhador.getTelaDoJogo().getVidasHeroi();
-		System.out.println(vidasHeroi);
 		//Diminui o numero de vidas do heroi se elas foram > 0, caso contrário chama o game over
 		if(vidasHeroi > 0) {
 			listaElementos = Desenhador.getTelaDoJogo().setFase();
