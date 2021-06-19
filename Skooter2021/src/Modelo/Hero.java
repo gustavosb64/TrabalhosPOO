@@ -1,8 +1,15 @@
 package Modelo;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
+import Auxiliar.Consts;
 import Auxiliar.Posicao;
 
 @SuppressWarnings("serial")
@@ -53,6 +60,20 @@ public class Hero extends Animado implements Serializable {
 
     public void setIVidas(int vida){
         this.iVidas = vida;
+    }
+
+    public void setImage(String sNomeImagePNG){
+        
+        try {
+            iImage = new ImageIcon(new java.io.File(".").getCanonicalPath() + Consts.PATH + sNomeImagePNG);
+            Image img = iImage.getImage();
+            BufferedImage bi = new BufferedImage(Consts.CELL_SIDE, Consts.CELL_SIDE, BufferedImage.TYPE_INT_ARGB);
+            Graphics g = bi.createGraphics();
+            g.drawImage(img, 0, 0, Consts.CELL_SIDE, Consts.CELL_SIDE, null);
+            iImage = new ImageIcon(bi);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
    
 }
