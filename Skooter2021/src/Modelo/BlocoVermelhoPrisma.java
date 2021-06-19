@@ -16,6 +16,7 @@ public class BlocoVermelhoPrisma extends Animado {
 		this.bDestrutivel = false;
 	}
 	
+	//Retorna verdadeiro quando a posição do bloco é alterada pelo heroi
 	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
         Posicao p = hHeroi.getPosicao();
 		if(p.getColunaAnterior() != p.getColuna()) {
@@ -28,11 +29,4 @@ public class BlocoVermelhoPrisma extends Animado {
 		}
 		return false;	
 	}
-
-	@Override
-	public boolean move() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
 }

@@ -2,10 +2,6 @@ package Auxiliar;
 
 import java.io.File;
 
-/**
- *
- * @author Junio
- */ 
 public class Consts {
     public static final int CELL_SIDE = 75;
     public static final int RES = 11;

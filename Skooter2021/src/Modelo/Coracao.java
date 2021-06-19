@@ -18,10 +18,6 @@ public class Coracao extends Animado{
         this.iContaFrames = 0;
 	}
 
-	public boolean move() {
-		return false;
-	}
-
 	public void autoDesenho(ArrayList<Elemento> ListElem, int index) {
 
         //seleção aleatória para a direção do movimento
@@ -62,16 +58,13 @@ public class Coracao extends Animado{
         super.autoDesenho(ListElem, index);
     }
 
-    public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
-        return true;
-    }
-
+	//Esse método é chamado quando o heroi pega o coração. Incrementa o número de vidas do heroi e remove
+	//O coração da tela.
     @Override
 	public void contatoTransponivel(ArrayList<Elemento> listaElementos) { 
         int vidasHeroi =  Desenhador.getTelaDoJogo().getVidasHeroi();
         Desenhador.getTelaDoJogo().setVidasHeroi(vidasHeroi + 1);
        
-
 	    listaElementos.remove(this);	    
         return;
     }

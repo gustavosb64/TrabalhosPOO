@@ -12,16 +12,15 @@ public class Seta extends Elemento{
         super.bTransponivel = true;    
         super.orientacao = orientacao;
     }
-
-    public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){
-        return true;
-    }
-
+    
+    
+    //Esse método é chamado quando  heroi encosta na seta
     @Override
     public void contatoTransponivel(ArrayList<Elemento> ListElem){
         ControleDeJogo cControle = new ControleDeJogo();
         Hero hHeroi = (Hero) ListElem.get(0);
-
+        
+        //Realiza uma seleção da orientação que deve mover o heroi
 		switch (super.orientacao) {
 		    case CIMA:
                 hHeroi.moveUp();

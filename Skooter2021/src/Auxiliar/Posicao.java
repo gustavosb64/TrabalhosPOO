@@ -45,12 +45,7 @@ public class Posicao implements Serializable{
 
     public boolean estaNaMesmaPosicao(Posicao posicao){
         return (linha == posicao.getLinha() && coluna == posicao.getColuna());
-    }
-
-    public boolean copia(Posicao posicao){
-        return this.setPosicao(posicao.getLinha(),posicao.getColuna());
-    }
-    
+    }    
     
     public boolean moveUp(){
         return this.setPosicao(this.getLinha()-1, this.getColuna());
@@ -72,5 +67,4 @@ public class Posicao implements Serializable{
 	public int getColunaAnterior() {
 		return colunaAnterior;
 	}
-    
 }

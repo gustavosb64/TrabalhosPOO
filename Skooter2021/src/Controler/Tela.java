@@ -122,7 +122,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
         	hHero.ataque(eElementos); 
         } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
             System.exit(0);
-        } else if (e.getKeyCode() == KeyEvent.VK_R) {
+        } else if (e.getKeyCode() == KeyEvent.VK_R) { //Reseta fase atual
             this.setFase();
         }
         
