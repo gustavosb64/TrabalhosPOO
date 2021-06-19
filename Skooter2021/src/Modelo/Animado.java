@@ -43,8 +43,6 @@ public abstract class Animado extends Elemento {
 		return super.orientacao;
 	}
 
-	public abstract boolean move();
-
 	public void contatoComAtaque(ArrayList<Elemento> listaElementos, Orientacao orientacao) {
 		// TODO Auto-generated method stub
 		

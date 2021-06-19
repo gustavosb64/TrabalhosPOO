@@ -5,8 +5,6 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -20,7 +18,7 @@ import Modelo.Elemento;
 import Modelo.Hero;
 
 @SuppressWarnings("serial")
-public class Tela extends javax.swing.JFrame implements MouseListener, KeyListener {
+public class Tela extends javax.swing.JFrame implements KeyListener {
 
     private Hero hHero;
     private ArrayList<Elemento> eElementos;
@@ -28,24 +26,18 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
     private Graphics g2;
     private int faseAtual;
     private int vidasHeroi;
-    /**
-     * Creates new form
-     */
+   
     public Tela() {
+    	this.faseAtual = 0;
+        this.vidasHeroi = 2;
+        
         Desenhador.setCenario(this); /*Desenhador funciona no modo estatico*/
         initComponents();
- 
-        this.addMouseListener(this); /*mouse*/
         this.addKeyListener(this);   /*teclado*/
         
         /*Cria a janela do tamanho do cenario + insets (bordas) da janela*/
         this.setSize(Consts.RES * Consts.CELL_SIDE + getInsets().left + getInsets().right,
                 Consts.RES * Consts.CELL_SIDE + getInsets().top + getInsets().bottom);
-
-        
-        this.faseAtual = 0;
-        this.vidasHeroi = 2;
-
 
         this.setFase();
     }
@@ -58,23 +50,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
 		this.vidasHeroi = vidasHeroi;
 	}
 
-	public ArrayList<Elemento> getListaElementos(){
-        return this.eElementos;
-    }
-
 /*--------------------------------------------------*/
-    public void addElemento(Elemento umElemento) {
-        eElementos.add(umElemento);
-    }
-
-    public Hero gethHero() {
-		return hHero;
-	}
-
-	public ArrayList<Elemento> geteElementos() {
-		return eElementos;
-	}
-
 	public ControleDeJogo getcControle() {
 		return cControle;
 	}
@@ -83,25 +59,21 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
 		return g2;
 	}
 
-	public void removeElemento(Elemento umElemento) {
-        eElementos.remove(umElemento);
-    }
-
     public Graphics getGraphicsBuffer(){
         return g2;
     }
     
-    /*Este metodo eh executado a cada Consts.FRAME_INTERVAL milissegundos*/    
+    //Este metodo eh executado a cada Consts.FRAME_INTERVAL milissegundos
     public void paint(Graphics gOld) {
         Graphics g = this.getBufferStrategy().getDrawGraphics();
         /*Criamos um contexto gráfico*/
         g2 = g.create(getInsets().left, getInsets().top, getWidth() - getInsets().right, getHeight() - getInsets().top);
 
-        /*Desenha cenário*/
+        //Desenha cenário
         for (int i = 0; i < Consts.RES; i++) {
             for (int j = 0; j < Consts.RES; j++) {
                 try {
-                    /*Linha para alterar o background*/
+                    //Linha para alterar o background
                     Image newImage = Toolkit.getDefaultToolkit().getImage(new java.io.File(".").getCanonicalPath() + Consts.PATH + "background.png");
                     g2.drawImage(newImage,j*Consts.CELL_SIDE, i*Consts.CELL_SIDE, Consts.CELL_SIDE, Consts.CELL_SIDE, null);
 
@@ -111,7 +83,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             }
         }
         
-        /*Aqui podem ser inseridos novos processamentos de controle*/
+        //Aqui podem ser inseridos novos processamentos de controle
         if (!this.eElementos.isEmpty()) {
             this.cControle.desenhaTudo(eElementos);
             this.cControle.processaTudo(eElementos);
@@ -131,13 +103,13 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             }
         };        
         
-        /*Redesenha (executa o metodo paint) tudo a cada Consts.FRAME_INTERVAL milissegundos*/
+        //Redesenha (executa o metodo paint) tudo a cada Consts.FRAME_INTERVAL milissegundos
         Timer timer = new Timer();
         timer.schedule(redesenhar, 0, Consts.FRAME_INTERVAL);
     }
 
     public void keyPressed(KeyEvent e) {
-        /*Movimento do heroi via teclado*/
+        //Movimento do heroi via teclado
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             hHero.moveUp();
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -150,50 +122,16 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         	hHero.ataque(eElementos); 
         } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
             System.exit(0);
-        } else if (e.getKeyCode() == KeyEvent.VK_R) {
-
+        } else if (e.getKeyCode() == KeyEvent.VK_R) { //Reseta fase atual
             this.setFase();
-            /*
-            this.eElementos.clear();
-            eElementos = fase.CriaFase2();
-            */
-        
-            /*
-            this.eElementos.clear();
-            hHero = new Hero("vacina.png");
-            hHero.setPosicao(0, 7);
-            this.addElemento(hHero);
-
-            CoronaVirus cTeste = new CoronaVirus("carro_azul.png");
-            cTeste.setPosicao(5, 5);
-            this.addElemento(cTeste);
-            */
         }
         
-        /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/
+        //Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava
         if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao(),0)) {
             hHero.voltaAUltimaPosicao();
         }
 
         this.setTitle("-> Cell: " + (hHero.getPosicao().getColuna()) + ", " + (hHero.getPosicao().getLinha()));
-    }
-
-    public void mousePressed(MouseEvent e) {
-         //Movimento via mouse
-         int x = e.getX();
-         int y = e.getY();
-     
-         this.setTitle("X: "+ x + ", Y: " + y +
-         " -> Cell: " + (y/Consts.CELL_SIDE) + ", " + (x/Consts.CELL_SIDE));
-        
-         this.hHero.getPosicao().setPosicao(y/Consts.CELL_SIDE, x/Consts.CELL_SIDE);
-
-        /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/
-        if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao(),0)) {
-            hHero.voltaAUltimaPosicao();
-        }         
-         
-        repaint();
     }
 
     /**
@@ -226,32 +164,10 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 
-    public void mouseMoved(MouseEvent e) {
-    }
-
-    public void mouseClicked(MouseEvent e) {
-    }
-
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    public void mouseEntered(MouseEvent e) {
-    }
-
-    public void mouseExited(MouseEvent e) {
-    }
-
-    public void mouseDragged(MouseEvent e) {
-    }
-
     public void keyTyped(KeyEvent e) {
     }
 
     public void keyReleased(KeyEvent e) {
-    }
-
-    public ArrayList<Elemento> getArrayElemento(){
-       return this.eElementos; 
     }
     
     public int getFaseAtual() {
@@ -285,7 +201,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
     
     public void setProximaFase() {
         this.faseAtual++;	
+        this.setFase();
         return;
     }
-
 }

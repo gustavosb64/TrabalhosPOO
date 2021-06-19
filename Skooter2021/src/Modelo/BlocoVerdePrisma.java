@@ -10,7 +10,6 @@ public class BlocoVerdePrisma extends BlocoVermelhoPrisma {
 
 	public BlocoVerdePrisma(String sNomeImagePNG) {
 		super(sNomeImagePNG);
-		super.bDestrutivel = true;
 	}
 
 	@Override

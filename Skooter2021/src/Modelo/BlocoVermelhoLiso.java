@@ -9,7 +9,6 @@ public class BlocoVermelhoLiso extends Elemento{
 	public BlocoVermelhoLiso(String sNomeImagePNG) {
 		super(sNomeImagePNG);
 		super.bTransponivel = false;
-		// TODO Auto-generated constructor stub
 	}
 
     public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e){

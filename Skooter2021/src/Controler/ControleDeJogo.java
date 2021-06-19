@@ -11,6 +11,7 @@ import Modelo.Hero;
 
 public class ControleDeJogo {
 	
+	//Lista percorrida do último elemento ao primeiro para heroi sempre sobrepor todos os objetos transponíveis na tela
 	public void desenhaTudo(ArrayList<Elemento> ListElem) {
 		for (int i = ListElem.size() - 1; i >= 0; i--) {
 			ListElem.get(i).autoDesenho(ListElem, i);
@@ -34,14 +35,15 @@ public class ControleDeJogo {
 			}
 		}
 		
+		//Verifica se ainda há frutas na tela
 		for (Elemento elemento : e) {
 			if (elemento instanceof Fruta)
 				temFruta = true;
 		}
-
+		
+		//Caso não existam frutas na fase, chama a próxima fase.
 		if (!temFruta) {
 			Desenhador.getTelaDoJogo().setProximaFase();
-			Desenhador.getTelaDoJogo().setFase();
 		}
 	}
 

@@ -14,16 +14,7 @@ public class Hero extends Animado implements Serializable {
         this.iVidas = 2;
 	}
 
-	@Override
-	public boolean move() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
-		return true;
-	}
-
+	//Esse método é chamado quando a tecla "espaço" é pressionada.
 	public boolean ataque(ArrayList<Elemento> listaElementos) {
 		Posicao posicao = new Posicao(0, 0);
 		Elemento elementoTemp;
@@ -45,6 +36,7 @@ public class Hero extends Animado implements Serializable {
 			    break;
 		}
 		
+		//Verifica se existe algum elemento no alcance do ataque do heroi.
 		for(int i = 1; i < listaElementos.size(); i++) {
 			elementoTemp = listaElementos.get(i);           
 			if(elementoTemp.getPosicao().estaNaMesmaPosicao(posicao)) {
