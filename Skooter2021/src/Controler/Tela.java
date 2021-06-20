@@ -130,7 +130,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
             hHero.setImage("skooter_hero_down.png");
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             hHero.moveLeft();
-            hHero.setImage("skooter_hero.png");
+            hHero.setImage("skooter_hero_left.png");
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT){
             hHero.moveRight();
             hHero.setImage("skooter_hero_right.png");

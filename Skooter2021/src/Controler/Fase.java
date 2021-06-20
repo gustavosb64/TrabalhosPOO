@@ -1,7 +1,6 @@
 package Controler;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import Modelo.BlocoVerdeLiso;
 import Modelo.BlocoVerdePrisma;
@@ -20,22 +19,10 @@ public class Fase extends ArrayList<Elemento>{
 	
     public Fase CriaFase1(){
 
-        Hero hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+        Hero hHero = new Hero("skooter_hero_down.png"); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(6, 4);
         this.add(hHero);
-        
-        Fruta morango = new Fruta("fruta_morango.png");
-        morango.setPosicao(0, 0);
-        this.add(morango);
-        
-        Fruta banana = new Fruta("fruta_banana.png");
-        banana.setPosicao(0, 10);
-        this.add(banana);
-        
-        Fruta cereja = new Fruta("fruta_cereja.png");
-        cereja.setPosicao(10, 10);
-        this.add(cereja);
-        
+               
         BlocoVerdePrisma bloco0_1 = new BlocoVerdePrisma("bloco_verde.png");
         bloco0_1.setPosicao(0, 1);
         this.add(bloco0_1);
@@ -246,12 +233,32 @@ public class Fase extends ArrayList<Elemento>{
         robo4.setPosicao(10, 9);        
         this.add(robo4);
         
+        BlocoVerdePrisma bloco9_0 = new BlocoVerdePrisma("bloco_verde.png");
+        bloco7_8.setPosicao(9, 0);
+        this.add(bloco9_0);
+ 
+        Fruta morango = new Fruta("fruta_morango.png");
+        morango.setPosicao(0, 0);
+        this.add(morango);
+        
+        Fruta banana = new Fruta("fruta_banana.png");
+        banana.setPosicao(0, 10);
+        this.add(banana);
+        
+        Fruta cereja = new Fruta("fruta_cereja.png");
+        cereja.setPosicao(10, 10);
+        this.add(cereja);
+
+        Fruta morango1 = new Fruta("fruta_morango.png");
+        morango1.setPosicao(10, 0);
+        this.add(morango1);
+        
         return this;
     }
     
     public Fase CriaFase2(){
 
-        Hero hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+        Hero hHero = new Hero("skooter_hero_down.png"); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(0, 7);
         this.add(hHero);
         
@@ -421,7 +428,7 @@ public class Fase extends ArrayList<Elemento>{
 
     public Fase CriaFase3(){
 
-        Hero hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+        Hero hHero = new Hero("skooter_hero_down.png"); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(5, 5);
         this.add(hHero);
         
@@ -512,7 +519,7 @@ public class Fase extends ArrayList<Elemento>{
 
     public Fase CriaFase4(){
 
-        Hero hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+        Hero hHero = new Hero("skooter_hero_down.png"); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(4, 5);
         this.add(hHero);
         
