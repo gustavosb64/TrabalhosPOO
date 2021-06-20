@@ -30,25 +30,29 @@ public class Robo extends Animado {
 		if (this.iContaFrames == Consts.TIMER_ROBO) {
 			switch (this.direction) {
 			case 0:
-				if (!this.moveUp() || !cControle.ehPosicaoValida(ListElem, this.getPosicao(), index)) {
+                if (!this.moveUp()) break;
+				if (!cControle.ehPosicaoValida(ListElem, this.getPosicao(), index)) {
 					this.voltaAUltimaPosicao();
 				}
 				break;
 
 			case 1:
-				if (!this.moveRight() || !cControle.ehPosicaoValida(ListElem, this.getPosicao(), index)) {
+                if (!this.moveRight()) break;
+				if (!cControle.ehPosicaoValida(ListElem, this.getPosicao(), index)) {
 					this.voltaAUltimaPosicao();
 				}
 				break;
 
 			case 2:
-				if (!this.moveDown() || !cControle.ehPosicaoValida(ListElem, this.getPosicao(), index)) {
+                if (!this.moveDown()) break;
+				if (!cControle.ehPosicaoValida(ListElem, this.getPosicao(), index)) {
 					this.voltaAUltimaPosicao();
 				}
 				break;
 
 			case 3:
-				if (!this.moveLeft() || !cControle.ehPosicaoValida(ListElem, this.getPosicao(), index)) {
+                if (!this.moveLeft()) break;
+				if (!cControle.ehPosicaoValida(ListElem, this.getPosicao(), index)) {
 					this.voltaAUltimaPosicao();
 				}
 				break;
