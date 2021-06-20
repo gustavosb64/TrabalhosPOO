@@ -1,11 +1,12 @@
 package Controler;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-import Modelo.BlocoVermelhoPrisma;
-import Modelo.BlocoVermelhoLiso;
 import Modelo.BlocoVerdeLiso;
 import Modelo.BlocoVerdePrisma;
+import Modelo.BlocoVermelhoLiso;
+import Modelo.BlocoVermelhoPrisma;
 import Modelo.Coracao;
 import Modelo.Elemento;
 import Modelo.Fruta;
@@ -23,21 +24,17 @@ public class Fase extends ArrayList<Elemento>{
         hHero.setPosicao(6, 4);
         this.add(hHero);
         
-        Coracao coracao = new Coracao("heart.png");
-        coracao.setPosicao(4, 4);
-        this.add(coracao);
+        Fruta morango = new Fruta("fruta_morango.png");
+        morango.setPosicao(0, 0);
+        this.add(morango);
         
         Fruta banana = new Fruta("fruta_banana.png");
-        banana.setPosicao(0, 0);
+        banana.setPosicao(0, 10);
         this.add(banana);
         
-        Fruta banana2 = new Fruta("fruta_banana.png");
-        banana2.setPosicao(2, 2);
-        this.add(banana2);
-        
-        Fruta banana3 = new Fruta("fruta_banana.png");
-        banana3.setPosicao(4, 3);
-        this.add(banana3);
+        Fruta cereja = new Fruta("fruta_cereja.png");
+        cereja.setPosicao(10, 10);
+        this.add(cereja);
         
         BlocoVerdePrisma bloco0_1 = new BlocoVerdePrisma("bloco_verde.png");
         bloco0_1.setPosicao(0, 1);
@@ -231,12 +228,23 @@ public class Fase extends ArrayList<Elemento>{
         BlocoVerdePrisma bloco10_7 = new BlocoVerdePrisma("bloco_verde.png");
         bloco10_7.setPosicao(10, 7);
         this.add(bloco10_7);
-        
 
-       
-        Robo cRobo = new Robo("robo_azul.png");
+        Robo cRobo = new Robo("robo_amarelo.png");
         cRobo.setPosicao(2, 0);        
         this.add(cRobo);     
+        
+
+        Robo robo2 = new Robo("robo_azul.png");
+        robo2.setPosicao(0, 9);        
+        this.add(robo2);
+
+        Robo robo3 = new Robo("robo_azul.png");
+        robo3.setPosicao(10, 1);        
+        this.add(robo3);
+        
+        Robo robo4 = new Robo("robo_azul.png");
+        robo4.setPosicao(10, 9);        
+        this.add(robo4);
         
         return this;
     }
@@ -247,77 +255,174 @@ public class Fase extends ArrayList<Elemento>{
         hHero.setPosicao(0, 7);
         this.add(hHero);
         
+        Fruta morango1 = new Fruta("fruta_morango.png");
+        morango1.setPosicao(1, 5);
+        this.add(morango1);
+        
         Fruta banana = new Fruta("fruta_banana.png");
-        banana.setPosicao(6, 8);
+        banana.setPosicao(5, 1);
         this.add(banana);
         
+        Fruta cereja = new Fruta("fruta_cereja.png");
+        cereja.setPosicao(9, 5);
+        this.add(cereja);
         
-        BlocoVermelhoLiso bloco = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
-        bloco.setPosicao(1, 3);
-        this.add(bloco);
+        Fruta morango = new Fruta("fruta_morango.png");
+        morango.setPosicao(9, 5);
+        this.add(morango);
         
-        BlocoVermelhoLiso blocoEs = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
-        blocoEs.setPosicao(5, 5);
-        this.add(blocoEs);
+        BlocoVermelhoLiso blocoVermelhoLiso; 
+        for (int i=1; i<10; i += 2){
+        	blocoVermelhoLiso = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        	blocoVermelhoLiso.setPosicao(3, i);
+            this.add(blocoVermelhoLiso);
+        }
         
-        BlocoVermelhoLiso blocoEs2 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
-        blocoEs2.setPosicao(6, 4);
-        this.add(blocoEs2);
+        for (int i=1; i<10; i += 2){
+        	blocoVermelhoLiso = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        	blocoVermelhoLiso.setPosicao(7, i);
+            this.add(blocoVermelhoLiso);
+        }
         
-        BlocoVermelhoPrisma blocou2 = new BlocoVermelhoPrisma("bloco_vermelho_prisma.png");
-        blocou2.setPosicao(3, 3);
-        this.add(blocou2);
-
-        Robo cRobo4 = new Robo("robo_azul.png");
-        cRobo4.setPosicao(6, 5);        
-        this.add(cRobo4);
+        for (int i=1; i<10; i += 4){
+        	blocoVermelhoLiso = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        	blocoVermelhoLiso.setPosicao(i, 3);
+            this.add(blocoVermelhoLiso);
+        }
         
-        BlocoVermelhoLiso blocoEs3 = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
-        blocoEs3.setPosicao(6, 6);
-        this.add(blocoEs3);
-
-        BlocoVerdePrisma blocoverde1 = new BlocoVerdePrisma("bloco_verde.png");
-        blocoverde1.setPosicao(7, 5);
-        this.add(blocoverde1);
+        for (int i=1; i<10; i += 4){
+        	blocoVermelhoLiso = new BlocoVermelhoLiso("bloco_vermelho_liso.png");
+        	blocoVermelhoLiso.setPosicao(i, 7);
+            this.add(blocoVermelhoLiso);
+        }
         
-        BlocoVerdePrisma bloco3 = new BlocoVerdePrisma("bloco_verde.png");
-        bloco3.setPosicao(5, 2);
-        this.add(bloco3);
+        Seta seta;
+        for(int i = 3; i < 8; i++) {
+        	seta = new Seta("seta_cima.png", Orientacao.CIMA);
+        	seta.setPosicao(i, 0);
+        	this.add(seta);
+        }
         
-        BlocoVerdeLiso bloco4 = new BlocoVerdeLiso("bloco_verde_liso.png");
-        bloco4.setPosicao(6, 2);
-        this.add(bloco4);
+        Seta seta0_3 = new Seta("seta_direita.png", Orientacao.DIREITA);
+        seta0_3.setPosicao(0, 3);
+        this.add(seta0_3);
         
-        BlocoVermelhoPrisma bloco2 = new BlocoVermelhoPrisma("bloco_vermelho_liso.png");
-        bloco2.setPosicao(3, 5);
-        this.add(bloco2);  
-
-        Coracao cCoracao = new Coracao("heart.png");
-        cCoracao.setPosicao(3, 3);
-        this.add(cCoracao);
-
-        Robo cRobo = new Robo("robo_azul.png");
-        cRobo.setPosicao(7, 2);        
-        this.add(cRobo);
+        Seta seta0_7 = new Seta("seta_direita.png", Orientacao.DIREITA);
+        seta0_7.setPosicao(0, 7);
+        this.add(seta0_7);
         
-        Seta cSeta1 = new Seta("seta_cima.png", Orientacao.CIMA);
-        cSeta1.setPosicao(3, 5);        
-        this.add(cSeta1);
-
-        Seta cSeta2 = new Seta("seta_cima.png", Orientacao.CIMA);
-        cSeta2.setPosicao(6, 5);        
-        this.add(cSeta2);
-
-        Seta cSeta3 = new Seta("seta_cima.png", Orientacao.CIMA);
-        cSeta3.setPosicao(3, 5);        
-        this.add(cSeta3);
-        return this;
+        Seta seta2_3 = new Seta("seta_direita.png", Orientacao.DIREITA);
+        seta2_3.setPosicao(2, 3);
+        this.add(seta2_3);
+        
+        Seta seta2_4 = new Seta("seta_baixo", Orientacao.BAIXO);
+        seta2_4.setPosicao(2, 4);
+        this.add(seta2_4);
+        
+        Seta seta3_4 = new Seta("seta_baixo", Orientacao.BAIXO);
+        seta3_4.setPosicao(3, 4);
+        this.add(seta3_4);
+        
+        for (int i = 5; i < 8; i++) {
+        	seta = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
+        	seta.setPosicao(2, i);
+        	this.add(seta);
+		}
+        
+        Seta seta3_6 = new Seta("seta_cima.png", Orientacao.CIMA);
+        seta3_6.setPosicao(3, 6);
+        this.add(seta3_6);
+        
+        Seta seta3_2 = new Seta("seta_baixo", Orientacao.BAIXO);
+        seta3_2.setPosicao(3, 2);
+        this.add(seta3_2);
+        
+        Seta seta3_8 = new Seta("seta_cima.png", Orientacao.CIMA);
+        seta3_8.setPosicao(3, 8);
+        this.add(seta3_8);
+        
+        Seta seta3_10 = new Seta("seta_baixo", Orientacao.BAIXO);
+        seta3_10.setPosicao(3, 10);
+        this.add(seta3_10);
+        
+        Seta seta4_10 = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
+    	seta4_10.setPosicao(4, 10);
+    	this.add(seta4_10);
+    	
+    	Seta seta4_9 = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
+    	seta4_9.setPosicao(4, 9);
+    	this.add(seta4_9);
+    	
+    	Seta seta4_8 = new Seta("seta_cima.png", Orientacao.CIMA);
+        seta4_8.setPosicao(4, 8);
+        this.add(seta4_8);
+        
+        Seta seta4_7 = new Seta("seta_direita.png", Orientacao.DIREITA);
+        seta4_7.setPosicao(4, 7);
+        this.add(seta4_7);
+        
+        Seta seta6_3 = new Seta("seta_direita.png", Orientacao.DIREITA);
+        seta6_3.setPosicao(6, 3);
+        this.add(seta6_3);
+        
+        Seta seta6_7 = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
+        seta6_7.setPosicao(6, 7);
+        this.add(seta6_7);
+        
+        Seta seta7_2 = new Seta("seta_baixo", Orientacao.BAIXO);
+        seta7_2.setPosicao(7, 2);
+        this.add(seta7_2);
+        
+        Seta seta7_4 = new Seta("seta_baixo", Orientacao.BAIXO);
+        seta7_4.setPosicao(7, 4);
+        this.add(seta7_4);
+        
+        for (int i = 6; i < 11; i++) {
+        	seta = new Seta("seta_cima.png", Orientacao.CIMA);
+        	seta.setPosicao(7, i);
+        	this.add(seta);
+		}
+        
+        for (int i = 3; i < 8; i += 4) {
+        	seta = new Seta("seta_direita.png", Orientacao.DIREITA);
+        	seta.setPosicao(8, i);
+        	this.add(seta);
+		}
+        
+        for (int i = 3; i < 8; i += 4) {
+        	seta = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
+        	seta.setPosicao(10, i);
+        	this.add(seta);
+		}
+        
+        Robo robo1 = new Robo("robo_amarelo.png");
+        robo1.setPosicao(1, 1);        
+        this.add(robo1); 
+        
+        Robo robo2 = new Robo("robo_azul.png");
+        robo2.setPosicao(9, 1);        
+        this.add(robo2); 
+        
+        Robo robo3 = new Robo("robo_amarelo.png");
+        robo3.setPosicao(9, 1);        
+        this.add(robo3); 
+        
+        Robo robo4 = new Robo("robo_amarelo.png");
+        robo4.setPosicao(9, 9);        
+        this.add(robo4);
+        
+        Coracao coracao = new Coracao("heart.png");
+        coracao.setPosicao(10, 8);
+        this.add(coracao);
+        
+        
+       return this;
     }
 
     public Fase CriaFase3(){
 
         Hero hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
-        hHero.setPosicao(6, 4);
+        hHero.setPosicao(5, 5);
         this.add(hHero);
         
         //Colocando blocos vermelhos com prisma
