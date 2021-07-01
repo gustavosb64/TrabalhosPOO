@@ -6,7 +6,7 @@ public class Sistema{
             System.out.println("SUBSTRING MALICIOSA EXECUTADA!!!");
         }
 
-        System.out.println("Método 1 sendo executado");
+        System.out.println("Método 1 sendo executado: "+string);
     }
 
     void metodo2(String string){
@@ -15,7 +15,7 @@ public class Sistema{
             System.out.println("SUBSTRING MALICIOSA EXECUTADA!!!");
         }
 
-        System.out.println("Método 2 sendo executado");
+        System.out.println("Método 2 sendo executado: "+string);
     }
 
 }
