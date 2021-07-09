@@ -68,24 +68,6 @@ public abstract class Elemento implements Serializable {
         this.pPosicao.volta();
     }
     
-   /**
-    * Retorna true se existirem elementos em contato com este elemento. do contrario retorna false*/
-    public boolean estaEmContato(Elemento outroElemento) {
-    	Posicao p = new Posicao(this.pPosicao.getLinha()-1, this.getPosicao().getColuna());
-    	if(p.estaNaMesmaPosicao(outroElemento.getPosicao())) return true;
-    	
-    	p.setPosicao(this.getPosicao().getLinha()+1, this.getPosicao().getColuna());
-    	if(p.estaNaMesmaPosicao(outroElemento.getPosicao())) return true;
-    	
-    	p.setPosicao(this.getPosicao().getLinha(), this.getPosicao().getColuna()-1);
-    	if(p.estaNaMesmaPosicao(outroElemento.getPosicao())) return true;
-    	
-    	p.setPosicao(this.getPosicao().getLinha()+1, this.getPosicao().getColuna()+1);
-    	if(p.estaNaMesmaPosicao(outroElemento.getPosicao())) return true;
-    	
-    	return false;
-    }
-    
     public void contatoComAtaque(ArrayList<Elemento> listaElementos, Orientacao orientacao, int index) {
     	return;
     }
