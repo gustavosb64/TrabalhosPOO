@@ -3,6 +3,7 @@ package Modelo;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,10 +16,17 @@ import Auxiliar.Posicao;
 @SuppressWarnings("serial")
 public class Hero extends Animado implements Serializable {
     private int iVidas;
+    private static Hero heroi;
 
-	public Hero(String sNomeImagePNG) {
+	private Hero(String sNomeImagePNG) {
 		super(sNomeImagePNG);
         this.iVidas = 2;
+	}
+	
+	public static synchronized Hero getHero() {
+		if(heroi == null)
+			heroi = new Hero("skooter_hero_down.png");
+		return heroi;
 	}
 
 	//Esse método é chamado quando a tecla "espaço" é pressionada.

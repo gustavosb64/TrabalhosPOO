@@ -19,7 +19,7 @@ public class Fase extends ArrayList<Elemento>{
 	
     public Fase CriaFase1(){
 
-        Hero hHero = new Hero("skooter_hero_down.png"); /* https://www.online-image-editor.com/ */
+        Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(6, 4);
         this.add(hHero);
                
@@ -258,7 +258,7 @@ public class Fase extends ArrayList<Elemento>{
     
     public Fase CriaFase2(){
 
-        Hero hHero = new Hero("skooter_hero_down.png"); /* https://www.online-image-editor.com/ */
+        Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(0, 7);
         this.add(hHero);
         
@@ -428,7 +428,7 @@ public class Fase extends ArrayList<Elemento>{
 
     public Fase CriaFase3(){
 
-        Hero hHero = new Hero("skooter_hero_down.png"); /* https://www.online-image-editor.com/ */
+        Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(5, 5);
         this.add(hHero);
         
@@ -519,7 +519,7 @@ public class Fase extends ArrayList<Elemento>{
 
     public Fase CriaFase4(){
 
-        Hero hHero = new Hero("skooter_hero_down.png"); /* https://www.online-image-editor.com/ */
+        Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(4, 5);
         this.add(hHero);
         
