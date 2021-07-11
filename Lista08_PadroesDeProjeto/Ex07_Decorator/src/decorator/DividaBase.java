@@ -2,7 +2,7 @@ package decorator;
 
 public class DividaBase implements Divida{
 	
-	private double valor;
+	protected double valor;
 	
 	public DividaBase(double valor) {
 		this.valor = valor;
