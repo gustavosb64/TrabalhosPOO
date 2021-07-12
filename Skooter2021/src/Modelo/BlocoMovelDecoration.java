@@ -14,6 +14,7 @@ public class BlocoMovelDecoration extends BlocoDecorator{
 	}
 	
 	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
+		super.getBloco().contactHero(hHeroi, e);
         Posicao p = hHeroi.getPosicao();
 		if(p.getColunaAnterior() != p.getColuna()) {
 			boolean a = (p.getColunaAnterior() < p.getColuna()) ? super.moveRight() : super.moveLeft();
@@ -25,10 +26,10 @@ public class BlocoMovelDecoration extends BlocoDecorator{
 		}
 		return false;	
 	}
-	
+
 	@Override
-	public boolean isMovel() {
-		return super.isMovel();
+	public void contatoComAtaque(ArrayList<Elemento> ListElem, Orientacao orientacao, int index) {
+		bloco.contatoComAtaque(ListElem, orientacao, index);
 	}
 
 }

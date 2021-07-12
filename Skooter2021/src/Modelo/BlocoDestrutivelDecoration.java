@@ -12,7 +12,13 @@ public class BlocoDestrutivelDecoration extends BlocoDecorator{
 
 	@Override
 	public void contatoComAtaque(ArrayList<Elemento> ListElem, Orientacao orientacao, int index) {
-		ListElem.remove(this);
+		bloco.contatoComAtaque(ListElem, orientacao, index);
+		ListElem.remove(index);
+	}
+
+	@Override
+	public boolean contactHero(Animado hHeroi, ArrayList<Elemento> e) {
+		return bloco.contactHero(hHeroi, e);
 	}
 	
 }

@@ -27,10 +27,10 @@ public class Fase extends ArrayList<Elemento>{
         hHero.setPosicao(6, 4);
         this.add(hHero);
         
-        Bloco bloco = new BlocoBase(null);
-        
-        bloco = new BlocoMovelDecoration("bloco_verde.png", bloco);
+        Bloco bloco = new BlocoBase("bloco_verde.png");
         bloco = new BlocoDestrutivelDecoration("bloco_verde.png", bloco);
+        bloco = new BlocoMovelDecoration("bloco_verde.png", bloco);
+        
         
         ((Elemento) bloco).setPosicao(3, 3);
         this.add((Elemento) bloco);
