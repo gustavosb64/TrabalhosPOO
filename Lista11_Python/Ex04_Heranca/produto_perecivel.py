@@ -4,6 +4,12 @@ import datetime
 class ProdutoPerecivel(Produto):
 
     def __init__(self, codigo, preco_unitario, descricao, qtd_estoque, dataValidade):
+
+        #checa se dataValidade é do tipo data
+        if (type(dataValidade) != datetime.datetime):
+            print("Data inválida!")
+            return
+
         super().__init__(codigo, preco_unitario, descricao, qtd_estoque)
         self._dataValidade = dataValidade
 
