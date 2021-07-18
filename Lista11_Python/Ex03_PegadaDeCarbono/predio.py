@@ -1,4 +1,6 @@
-class Predio:
+from abc import ABC, abstractmethod
+
+class Predio(ABC):
 
     def __init__(self, nFrequentadores, mediaLixoPorFrequentador, consumoGasDiario):
         self.nFrequentadores = nFrequentadores
@@ -29,27 +31,5 @@ class Predio:
         return self.consumoGasDiario
 
     def getPegadaCarbono(self):
-        pCarbono = (mediaLixoPorFrequentador * nFrequentadores * 0.2) + (consumoGasPorDia * 0.1)
+        pCarbono = (self.mediaLixoPorFrequentador * self.nFrequentadores * 0.2) + (self.consumoGasDiario * 0.1)
         return pCarbono
-
-
-
-class Casa(Predio):
-
-    def __init__(self, nFrequentadores, mediaLixoPorFrequentador, consumoGasDiario, nComodos, nChuveiros):
-        super(Casa, self).__init__(nFrequentadores, mediaLixoPorFrequentador, consumoGasDiario)
-        self.nComodos = nComodos
-        self.nChuveiros = nChuveiros
-
-    def __str__(self):
-        strComodos = str(self.nComodos)
-        strChuveiros = str(self.nChuveiros)
-
-        string = super().__str__()
-        string = string+"\nnComodos: "+strComodos+"\n"
-        string = string+"nComodos: "+strChuveiros
-
-        return string
-    
-    def getNComodos(self):
-        return self.nComodos
