@@ -2,16 +2,14 @@ package Controler;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,16 +20,19 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
+import Auxiliar.Posicao;
+import Auxiliar.SerializaDesserializaArquivos;
 import Controler.strategies.Key;
 import Controler.strategies.Keys;
 import Modelo.Elemento;
 import Modelo.Hero;
 
 @SuppressWarnings("serial")
-public class Tela extends javax.swing.JFrame implements KeyListener {
+public class Tela extends javax.swing.JFrame implements KeyListener, MouseListener {
 
   private Hero hHero;
 	private ArrayList<Elemento> eElementos;
@@ -53,16 +54,16 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
 		Desenhador.setCenario(this); /* Desenhador funciona no modo estatico */
 		initComponents();
 		this.addKeyListener(this); /* teclado */
+		this.addMouseListener(this);
 
 		/* Cria a janela do tamanho do cenario + insets (bordas) da janela */
 		this.setSize(Consts.RES * Consts.CELL_SIDE + getInsets().left + getInsets().right,
 				Consts.RES * Consts.CELL_SIDE + getInsets().top + getInsets().bottom);
 
 		this.setFase();
-		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setDialogTitle("Selecione um elemento");
-		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		fileChooser.showOpenDialog(this);
+		
+		SerializaDesserializaArquivos.serializarElementosJogo();
+		
 	}
 
   public int getVidasHeroi() {
@@ -229,5 +230,83 @@ public ArrayList<Elemento> setFase() {
 	
 	public void setHero(Hero heroi) {
 		this.hHero = heroi;
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent e) {
+		int x = e.getX();
+        int y = e.getY();
+        Point z = e.getLocationOnScreen();
+        
+        this.setTitle("X: "+ x + ", Y: " + y +
+                " -> Cell: " + (y/Consts.CELL_SIDE) + ", " + (x/Consts.CELL_SIDE));
+        
+        JFileChooser fileChooser = new JFileChooser("."+File.separator+"elementos");
+		fileChooser.setDialogTitle("Selecione um elemento");
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("arquivo", "zip");
+		fileChooser.setFileFilter(filter);
+		int retorno = fileChooser.showOpenDialog(this);
+		if(retorno == JFileChooser.APPROVE_OPTION) {
+			File file = fileChooser.getSelectedFile();
+			try {
+				Elemento elemento = SerializaDesserializaArquivos.desserializarObjeto(file.getName());
+				elemento.setPosicao(y/Consts.CELL_SIDE, x/Consts.CELL_SIDE);
+				for(int i = 1; i < eElementos.size(); i++) {
+					Elemento elementoTemp = eElementos.get(i);           
+					if(elementoTemp.getPosicao().estaNaMesmaPosicao(elemento.getPosicao())) {
+						eElementos.remove(i);
+					}
+				}
+				eElementos.add(elemento);
+			} catch (ClassNotFoundException | IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+		
+        
+        
+	}
+	
+//	public void mousePressed(MouseEvent e) {
+//  //Movimento via mouse
+//  int x = e.getX();
+//  int y = e.getY();
+//
+//  this.setTitle("X: "+ x + ", Y: " + y +
+//  " -> Cell: " + (y/Consts.CELL_SIDE) + ", " + (x/Consts.CELL_SIDE));
+// 
+//  this.hHero.getPosicao().setPosicao(y/Consts.CELL_SIDE, x/Consts.CELL_SIDE);
+//
+// /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/
+// if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao(),0)) {
+//     hHero.voltaAUltimaPosicao();
+// }         
+//  
+// repaint();
+//}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
