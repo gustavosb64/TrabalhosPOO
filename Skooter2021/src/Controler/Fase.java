@@ -1,5 +1,6 @@
 package Controler;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import Modelo.Bloco;
@@ -18,9 +19,11 @@ import Modelo.Orientacao;
 import Modelo.Robo;
 import Modelo.Seta;
 
-@SuppressWarnings("serial")
-public class Fase extends ArrayList<Elemento>{
+
+public class Fase extends ArrayList<Elemento> implements Serializable {
 	
+	private static final long serialVersionUID = -3265424110410076503L;
+
 	public Fase criaFase5() {
 		
 		Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
@@ -659,4 +662,9 @@ public class Fase extends ArrayList<Elemento>{
 
         return this;
     }
+    
+    public Fase getFase() {
+    	return this;
+    }
+    
 }

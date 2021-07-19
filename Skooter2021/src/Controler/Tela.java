@@ -6,7 +6,12 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -41,7 +46,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(caminhoMusica);
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);
-        clip.start();
+        //clip.start();
         
         Desenhador.setCenario(this); /*Desenhador funciona no modo estatico*/
         initComponents();
@@ -119,6 +124,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
         Timer timer = new Timer();
         timer.schedule(redesenhar, 0, Consts.FRAME_INTERVAL);
     }
+    
 
     public void keyPressed(KeyEvent e) {
         //Movimento do heroi via teclado
@@ -140,6 +146,23 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
             System.exit(0);
         } else if (e.getKeyCode() == KeyEvent.VK_R) { //Reseta fase atual
             this.setFase();
+        }else if(e.getKeyCode() == KeyEvent.VK_S) {
+        	try {
+				ObjectOutputStream objectOutput = new ObjectOutputStream(new FileOutputStream("."+File.separator+"save"+File.separator+"save.bin"));
+				objectOutput.writeObject(this.eElementos);
+				objectOutput.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			} 
+        }else if(e.getKeyCode() == KeyEvent.VK_L) {
+        	try {
+				ObjectInputStream objectInput = new ObjectInputStream(new FileInputStream("."+File.separator+"save"+File.separator+"save.bin"));
+				this.eElementos = (ArrayList<Elemento>) objectInput.readObject();
+				 hHero = (Hero) eElementos.get(0);
+				objectInput.close();
+			} catch (IOException | ClassNotFoundException e1) {
+				e1.printStackTrace();
+			} 
         }
         
         //Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava
