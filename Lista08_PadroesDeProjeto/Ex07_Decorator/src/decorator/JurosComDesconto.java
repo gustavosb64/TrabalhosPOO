@@ -8,6 +8,7 @@ public class JurosComDesconto extends DividaDecorator{
 	
 	public JurosComDesconto(Divida divida, int mesesAtraso, double desconto) {
 		super(divida);
+		System.out.println("-----------"+divida.getValorDivida());
 		this.mesesAtraso = mesesAtraso;
 		this.desconto = desconto;
 	}

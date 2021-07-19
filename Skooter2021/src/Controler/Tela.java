@@ -39,7 +39,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
     
    
     public Tela() throws Exception {
-    	this.faseAtual = 0;
+    	this.faseAtual = 4;
         this.vidasHeroi = 2;
         
         File caminhoMusica  = new File("."+File.separator+"music"+File.separator+"ost.wav");
@@ -229,6 +229,9 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
                 this.eElementos = new Fase().CriaFase4();
                 break;
             case 4:
+                this.eElementos = new Fase().criaFase5();
+                break;
+            case 5:
                 System.out.println("FIM DE JOGO!");
                 System.exit(0);
         } 
