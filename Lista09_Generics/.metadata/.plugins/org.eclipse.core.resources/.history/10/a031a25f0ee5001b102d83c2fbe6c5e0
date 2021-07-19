@@ -1,0 +1,20 @@
+package pack;
+
+public class Generica <T>{
+	
+	private T listaElementos[];
+
+	public T[] getListaElementos() {
+		return listaElementos;
+	}
+
+	public void setListaElementos(T[] listaElementos) {
+		this.listaElementos = listaElementos;
+	}
+	
+	@Override
+	public String toString() {
+		return listaElementos.toString();
+	}
+
+}

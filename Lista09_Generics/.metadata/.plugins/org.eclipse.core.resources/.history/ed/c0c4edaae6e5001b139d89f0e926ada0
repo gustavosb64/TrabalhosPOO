@@ -1,0 +1,16 @@
+package pack;
+
+public class ArvoreGenerica <T>{
+	
+	private ElementoGenerico<T> raiz;
+	
+	public ArvoreGenerica(ElementoGenerico<T> raiz) {
+		this.raiz = raiz;
+	}
+	
+	public void adicionarElemento(ElementoGenerico<T> elemento) {
+		
+	}
+	
+
+}

@@ -1,0 +1,11 @@
+package pack;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Generica<Integer> generica = new Generica<Integer>();
+		Integer listaNumeros[] = {1,2,3};
+		generica.setListaElementos(listaNumeros);
+	}
+
+}

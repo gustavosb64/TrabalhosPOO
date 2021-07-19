@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.JFileChooser;
 
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
@@ -58,6 +59,10 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
 				Consts.RES * Consts.CELL_SIDE + getInsets().top + getInsets().bottom);
 
 		this.setFase();
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setDialogTitle("Selecione um elemento");
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		fileChooser.showOpenDialog(this);
 	}
 
 	public int getVidasHeroi() {

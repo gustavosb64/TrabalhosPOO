@@ -1,0 +1,17 @@
+package pack;
+
+public enum Status {
+	
+	SPAM(0), COMUM(1), IMPORTANTE(2), URGENTE(3);
+	
+	private int valor;
+
+	Status(int i) {
+		this.valor = i;
+	}
+	
+	public int getValor() {
+		return valor;
+	}
+
+}

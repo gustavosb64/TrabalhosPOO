@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/media/mateus/ostree/home/mateus/Development/USP/1semestreBSI/POO/TrabalhosPOO/Lista09_Generics/.metadata/.plugins/org.eclipse.jdt.core
+1596050324.index
+646308851.index
+3320380157.index

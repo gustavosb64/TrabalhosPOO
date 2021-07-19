@@ -1,0 +1,37 @@
+package pack;
+
+public class ElementoGenerico <T> implements Comparable<T>{
+	
+	private T valorElemento;
+	private T esquerda;
+	private T direita;
+	
+	public ElementoGenerico(T valorElemento){
+		this.valorElemento = valorElemento;
+	}
+
+	public T getValorElemento() {
+		return valorElemento;
+	}
+
+	public void setValorElemento(T valorElemento) {
+		this.valorElemento = valorElemento;
+	}
+
+	public T getEsquerda() {
+		return esquerda;
+	}
+
+	public void setEsquerda(T esquerda) {
+		this.esquerda = esquerda;
+	}
+
+	public T getDireita() {
+		return direita;
+	}
+
+	public void setDireita(T direita) {
+		this.direita = direita;
+	}
+
+}

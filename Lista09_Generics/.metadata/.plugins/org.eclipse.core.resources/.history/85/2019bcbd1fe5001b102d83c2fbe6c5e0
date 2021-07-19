@@ -1,0 +1,19 @@
+package pack;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Generica<String> generica = new Generica<String>();
+		String listaNumeros[] = {"1", "8", "5"};
+		generica.setListaElementos(listaNumeros);
+		generica.sort();
+		System.out.println(generica.toString());
+		GeradorDeEmails geradorDeEmails = new GeradorDeEmails();
+		Email[] listaDeEmails = new Email[10];
+		
+		for(int i = 0; i < 10; i++)
+			listaDeEmails[i] = geradorDeEmails.gerarEmail();
+			
+	}
+
+}

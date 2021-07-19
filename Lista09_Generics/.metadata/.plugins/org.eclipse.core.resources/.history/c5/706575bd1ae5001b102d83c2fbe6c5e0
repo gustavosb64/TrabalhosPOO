@@ -1,0 +1,9 @@
+package pack;
+
+public enum Status {
+	
+	COMUM(1), IMPORTANTE(2), URGENTE(3);
+
+	Status(int i) {}
+
+}
