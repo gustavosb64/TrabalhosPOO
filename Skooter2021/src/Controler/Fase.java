@@ -3,6 +3,10 @@ package Controler;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import Modelo.Bloco;
+import Modelo.BlocoBase;
+import Modelo.BlocoDestrutivelDecoration;
+import Modelo.BlocoMovelDecoration;
 import Modelo.BlocoVerdeLiso;
 import Modelo.BlocoVerdePrisma;
 import Modelo.BlocoVermelhoLiso;
@@ -20,7 +24,28 @@ public class Fase extends ArrayList<Elemento> implements Serializable {
 	
 	private static final long serialVersionUID = -3265424110410076503L;
 
-	public Fase CriaFase1(){
+	public Fase criaFase5() {
+		
+		Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
+        hHero.setPosicao(6, 4);
+        this.add(hHero);
+        
+        Bloco bloco = new BlocoBase("bloco_verde.png");
+        bloco = new BlocoDestrutivelDecoration("bloco_verde.png", bloco);
+        bloco = new BlocoMovelDecoration("bloco_verde.png", bloco);
+        
+        
+        ((Elemento) bloco).setPosicao(3, 3);
+        this.add((Elemento) bloco);
+        
+        Fruta morango = new Fruta("fruta_morango.png");
+        morango.setPosicao(9, 5);
+        this.add(morango);
+        
+		return this;
+	}
+	
+    public Fase CriaFase1(){
 
         Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
         hHero.setPosicao(6, 4);
