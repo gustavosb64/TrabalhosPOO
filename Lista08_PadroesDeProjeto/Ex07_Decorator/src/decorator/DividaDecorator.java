@@ -16,5 +16,4 @@ public class DividaDecorator implements Divida{
 	public double getValorDivida() {
 		return divida.getValorDivida();
 	}
-
 }

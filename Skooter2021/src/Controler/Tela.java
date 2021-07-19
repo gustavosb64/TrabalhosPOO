@@ -32,7 +32,7 @@ import Modelo.Hero;
 @SuppressWarnings("serial")
 public class Tela extends javax.swing.JFrame implements KeyListener {
 
-	private Hero hHero;
+  private Hero hHero;
 	private ArrayList<Elemento> eElementos;
 	private ControleDeJogo cControle = new ControleDeJogo();
 	private Graphics g2;
@@ -60,7 +60,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
 		this.setFase();
 	}
 
-	public int getVidasHeroi() {
+  public int getVidasHeroi() {
 		return vidasHeroi;
 	}
 
@@ -183,8 +183,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener {
 	public int getFaseAtual() {
 		return faseAtual;
 	}
-
-	public ArrayList<Elemento> setFase() {
+public ArrayList<Elemento> setFase() {
 
 		switch (this.faseAtual) {
 		case 0:
