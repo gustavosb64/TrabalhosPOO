@@ -95,105 +95,38 @@ public class Fase extends ArrayList<Elemento> implements Serializable {
 		criaRobo(9, 9, "robo_amarelo.png");
 		criaCoracao(10, 8);
 
-		Seta seta;
 		for (int i = 3; i < 8; i++) {
-			seta = new Seta("seta_cima.png", Orientacao.CIMA);
-			seta.setPosicao(i, 0);
-			this.add(seta);
+			criaSeta(i, 0, "seta_cima.png", Orientacao.CIMA);
 		}
-
-		Seta seta0_3 = new Seta("seta_direita.png", Orientacao.DIREITA);
-		seta0_3.setPosicao(0, 3);
-		this.add(seta0_3);
-
-		Seta seta0_7 = new Seta("seta_direita.png", Orientacao.DIREITA);
-		seta0_7.setPosicao(0, 7);
-		this.add(seta0_7);
-
-		Seta seta2_3 = new Seta("seta_direita.png", Orientacao.DIREITA);
-		seta2_3.setPosicao(2, 3);
-		this.add(seta2_3);
-
-		Seta seta2_4 = new Seta("seta_baixo", Orientacao.BAIXO);
-		seta2_4.setPosicao(2, 4);
-		this.add(seta2_4);
-
-		Seta seta3_4 = new Seta("seta_baixo", Orientacao.BAIXO);
-		seta3_4.setPosicao(3, 4);
-		this.add(seta3_4);
-
+		criaSeta(0, 3, "seta_direita.png", Orientacao.DIREITA);
+		criaSeta(0, 7, "seta_direita.png", Orientacao.DIREITA);
+		criaSeta(2, 3, "seta_direita.png", Orientacao.DIREITA);
+		criaSeta(2, 4, "seta_baixo", Orientacao.BAIXO);
+		criaSeta(3, 4, "seta_baixo", Orientacao.BAIXO);
 		for (int i = 5; i < 8; i++) {
-			seta = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
-			seta.setPosicao(2, i);
-			this.add(seta);
+			criaSeta(2, i, "seta_esquerda.png", Orientacao.ESQUERDA);
 		}
-
-		Seta seta3_6 = new Seta("seta_cima.png", Orientacao.CIMA);
-		seta3_6.setPosicao(3, 6);
-		this.add(seta3_6);
-
-		Seta seta3_2 = new Seta("seta_baixo", Orientacao.BAIXO);
-		seta3_2.setPosicao(3, 2);
-		this.add(seta3_2);
-
-		Seta seta3_8 = new Seta("seta_cima.png", Orientacao.CIMA);
-		seta3_8.setPosicao(3, 8);
-		this.add(seta3_8);
-
-		Seta seta3_10 = new Seta("seta_baixo", Orientacao.BAIXO);
-		seta3_10.setPosicao(3, 10);
-		this.add(seta3_10);
-
-		Seta seta4_10 = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
-		seta4_10.setPosicao(4, 10);
-		this.add(seta4_10);
-
-		Seta seta4_9 = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
-		seta4_9.setPosicao(4, 9);
-		this.add(seta4_9);
-
-		Seta seta4_8 = new Seta("seta_cima.png", Orientacao.CIMA);
-		seta4_8.setPosicao(4, 8);
-		this.add(seta4_8);
-
-		Seta seta4_7 = new Seta("seta_direita.png", Orientacao.DIREITA);
-		seta4_7.setPosicao(4, 7);
-		this.add(seta4_7);
-
-		Seta seta6_3 = new Seta("seta_direita.png", Orientacao.DIREITA);
-		seta6_3.setPosicao(6, 3);
-		this.add(seta6_3);
-
-		Seta seta6_7 = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
-		seta6_7.setPosicao(6, 7);
-		this.add(seta6_7);
-
-		Seta seta7_2 = new Seta("seta_baixo", Orientacao.BAIXO);
-		seta7_2.setPosicao(7, 2);
-		this.add(seta7_2);
-
-		Seta seta7_4 = new Seta("seta_baixo", Orientacao.BAIXO);
-		seta7_4.setPosicao(7, 4);
-		this.add(seta7_4);
-
+		criaSeta(3, 6, "seta_cima.png", Orientacao.CIMA);
+		criaSeta(3, 2, "seta_baixo", Orientacao.BAIXO);
+		criaSeta(3, 8, "seta_cima.png", Orientacao.CIMA);
+		criaSeta(3, 10, "seta_baixo", Orientacao.BAIXO);
+		criaSeta(4, 10, "seta_esquerda.png", Orientacao.ESQUERDA);
+		criaSeta(4, 9, "seta_esquerda.png", Orientacao.ESQUERDA);
+		criaSeta(4, 8, "seta_cima.png", Orientacao.CIMA);
+		criaSeta(4, 7, "seta_direita.png", Orientacao.DIREITA);
+		criaSeta(6, 3, "seta_direita.png", Orientacao.DIREITA);
+		criaSeta(6, 7, "seta_esquerda.png", Orientacao.ESQUERDA);
+		criaSeta(7, 2, "seta_baixo", Orientacao.BAIXO);
+		criaSeta(7, 4, "seta_baixo", Orientacao.BAIXO);
 		for (int i = 6; i < 11; i++) {
-			seta = new Seta("seta_cima.png", Orientacao.CIMA);
-			seta.setPosicao(7, i);
-			this.add(seta);
+			criaSeta(7, i, "seta_cima.png", Orientacao.CIMA);
 		}
-
 		for (int i = 3; i < 8; i += 4) {
-			seta = new Seta("seta_direita.png", Orientacao.DIREITA);
-			seta.setPosicao(8, i);
-			this.add(seta);
+			criaSeta(8, i, "seta_direita.png", Orientacao.DIREITA);
 		}
-
 		for (int i = 3; i < 8; i += 4) {
-			seta = new Seta("seta_esquerda.png", Orientacao.ESQUERDA);
-			seta.setPosicao(10, i);
-			this.add(seta);
+			criaSeta(10, i, "seta_esquerda.png", Orientacao.ESQUERDA);
 		}
-
 		return this;
 	}
 
@@ -347,5 +280,4 @@ public class Fase extends ArrayList<Elemento> implements Serializable {
 		seta.setPosicao(linha, coluna);
 		this.add(seta);
 	}
-
 }
