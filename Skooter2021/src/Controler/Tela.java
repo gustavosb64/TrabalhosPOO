@@ -11,6 +11,7 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -22,6 +23,7 @@ import javax.sound.sampled.Clip;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import Auxiliar.AutoSave;
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
 import Auxiliar.Posicao;
@@ -34,7 +36,7 @@ import Modelo.Hero;
 @SuppressWarnings("serial")
 public class Tela extends javax.swing.JFrame implements KeyListener, MouseListener {
 
-  private Hero hHero;
+	private Hero hHero;
 	private ArrayList<Elemento> eElementos;
 	private ControleDeJogo cControle = new ControleDeJogo();
 	private Graphics g2;
@@ -61,12 +63,12 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 				Consts.RES * Consts.CELL_SIDE + getInsets().top + getInsets().bottom);
 
 		this.setFase();
-		
+
 		SerializaDesserializaArquivos.serializarElementosJogo();
-		
+
 	}
 
-  public int getVidasHeroi() {
+	public int getVidasHeroi() {
 		return vidasHeroi;
 	}
 
@@ -123,6 +125,10 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 	}
 
 	public void go() {
+		Timer saveTimer = new Timer();
+		AutoSave autoSave = new AutoSave();
+		saveTimer.schedule(autoSave, new Date(), 5000);
+
 		TimerTask redesenhar = new TimerTask() {
 			public void run() {
 				repaint(); /* (executa o metodo paint) */
@@ -133,6 +139,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 		// milissegundos
 		Timer timer = new Timer();
 		timer.schedule(redesenhar, 0, Consts.FRAME_INTERVAL);
+
 	}
 
 	public void keyPressed(KeyEvent e) {
@@ -189,7 +196,8 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 	public int getFaseAtual() {
 		return faseAtual;
 	}
-public ArrayList<Elemento> setFase() {
+
+	public ArrayList<Elemento> setFase() {
 
 		switch (this.faseAtual) {
 		case 0:
@@ -219,19 +227,19 @@ public ArrayList<Elemento> setFase() {
 		this.setFase();
 		return;
 	}
-	
-	public ArrayList<Elemento> getElementos(){
+
+	public ArrayList<Elemento> getElementos() {
 		return this.eElementos;
 	}
-	
+
 	public void setElementos(ArrayList<Elemento> elementos) {
 		this.eElementos = elementos;
 	}
-	
+
 	public void setHero(Hero heroi) {
 		this.hHero = heroi;
 	}
-	
+
 	@Override
 	public void mousePressed(MouseEvent e) {
 		int x = e.getX();
@@ -256,57 +264,30 @@ public ArrayList<Elemento> setFase() {
 					Elemento elementoTemp = eElementos.get(i);           
 					if(elementoTemp.getPosicao().estaNaMesmaPosicao(elemento.getPosicao())) {
 						eElementos.remove(i);
+						eElementos.add(elemento);
 					}
 				}
-				eElementos.add(elemento);
 			} catch (ClassNotFoundException | IOException e1) {
 				e1.printStackTrace();
 			}
 		}
-		
-        
-        
 	}
-	
-//	public void mousePressed(MouseEvent e) {
-//  //Movimento via mouse
-//  int x = e.getX();
-//  int y = e.getY();
-//
-//  this.setTitle("X: "+ x + ", Y: " + y +
-//  " -> Cell: " + (y/Consts.CELL_SIDE) + ", " + (x/Consts.CELL_SIDE));
-// 
-//  this.hHero.getPosicao().setPosicao(y/Consts.CELL_SIDE, x/Consts.CELL_SIDE);
-//
-// /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/
-// if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao(),0)) {
-//     hHero.voltaAUltimaPosicao();
-// }         
-//  
-// repaint();
-//}
+
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+
 	}
 }
