@@ -1,0 +1,30 @@
+package pack;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class GeradorDeEmails {
+	
+	private String titulo;
+	private String texto;
+	private Status status;
+	
+	private List<String> titulos = new ArrayList<String>();
+	private List<String> mensagens = new ArrayList<String>();
+	private List<Status> listaStatus = new ArrayList<Status>();
+	
+	public Email gerarEmail() throws FileNotFoundException {
+		Email email = new Email();
+		String fileName = "titulosEmails.txt";
+        Scanner scan = new Scanner(new File(fileName));
+        while(scan.hasNextLine()){
+            titulos.add(scan.nextLine());
+        }
+		return email;
+	}
+	
+	
+}

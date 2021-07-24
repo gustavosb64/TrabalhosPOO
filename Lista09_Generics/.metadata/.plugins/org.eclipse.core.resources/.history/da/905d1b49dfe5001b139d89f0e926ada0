@@ -1,0 +1,13 @@
+package pack;
+
+public class ElementoGenerico <T>{
+	
+	private T valorElemento;
+	private T esquerda;
+	private T direita;
+	
+	public ElementoGenerico(T valorElemento){
+		this.valorElemento = valorElemento;
+	}
+
+}

@@ -1,0 +1,28 @@
+package pack;
+
+public class Generica <T>{
+	
+	private T listaElementos[];
+
+	public T[] getListaElementos() {
+		return listaElementos;
+	}
+
+	public void setListaElementos(T[] listaElementos) {
+		this.listaElementos = listaElementos;
+	}
+	
+	@Override
+	public String toString() {
+		String lista[] = new String[listaElementos.length];
+		for(int i = 0, j = 0; i < listaElementos.length; i++, j++) {
+			lista[i] = listaElementos[i].toString() + "\n";
+		}
+		
+		String cadeiaElementos;
+		for (int i = 0; i < lista.length - 1; i++) {
+			cadeiaElementos = string[i].concat(string[i+1]);
+		}
+	}
+
+}

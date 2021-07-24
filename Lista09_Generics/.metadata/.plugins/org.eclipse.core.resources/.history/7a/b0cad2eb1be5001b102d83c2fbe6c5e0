@@ -1,0 +1,14 @@
+package pack;
+
+public class GeradorDeEmails {
+	
+	private String titulo;
+	private String texto;
+	private Status status;
+	
+	public Email gerarEmail() {
+		Email email = new Email();
+		return email;
+	}
+
+}

@@ -1,0 +1,22 @@
+package pack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GeradorDeEmails {
+	
+	private String titulo;
+	private String texto;
+	private Status status;
+	
+	public Email gerarEmail() {
+		Email email = new Email();
+		return email;
+	}
+	
+	private List<String> titulos = new ArrayList<String>();
+	private List<String> mensagens = new ArrayList<String>();
+	private List<Status> listaStatus = new ArrayList<String>();
+	
+	
+}
