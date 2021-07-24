@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -26,7 +27,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import Auxiliar.AutoSave;
 import Auxiliar.Consts;
 import Auxiliar.Desenhador;
-import Auxiliar.Posicao;
 import Auxiliar.SerializaDesserializaArquivos;
 import Controler.strategies.Key;
 import Controler.strategies.Keys;
@@ -44,7 +44,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 	private int vidasHeroi;
 
 	public Tela() throws Exception {
-		this.faseAtual = 0;
+		this.faseAtual = 3;
 		this.vidasHeroi = 2;
 
 		File caminhoMusica = new File("." + File.separator + "music" + File.separator + "ost.wav");
@@ -124,10 +124,13 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 		}
 	}
 
-	public void go() {
+	public void go() throws Exception {
+		File tempoSaveFile = new File("." + File.separator + "save" + File.separator + "save_config.txt");
+	    Scanner myReader = new Scanner(tempoSaveFile);
+	    String tempoSave = myReader.nextLine();
 		Timer saveTimer = new Timer();
 		AutoSave autoSave = new AutoSave();
-		saveTimer.schedule(autoSave, new Date(), 5000);
+		saveTimer.schedule(autoSave, new Date(), Integer.parseInt(tempoSave));
 
 		TimerTask redesenhar = new TimerTask() {
 			public void run() {
@@ -258,7 +261,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 		if(retorno == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
 			try {
-				Elemento elemento = SerializaDesserializaArquivos.desserializarObjeto(file.getName());
+				Elemento elemento = (Elemento) SerializaDesserializaArquivos.desserializarObjeto(file.getName());
 				elemento.setPosicao(y/Consts.CELL_SIDE, x/Consts.CELL_SIDE);
 				for(int i = 1; i < eElementos.size(); i++) {
 					Elemento elementoTemp = eElementos.get(i);           

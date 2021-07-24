@@ -40,10 +40,17 @@ public class SerializaDesserializaArquivos implements Serializable{
 		
 	}
 	
-	public static Elemento desserializarObjeto(String nome) throws FileNotFoundException, IOException, ClassNotFoundException {
+	public static Object desserializarObjeto(String nome) throws FileNotFoundException, IOException, ClassNotFoundException {
 		ObjectInputStream objectInput = new ObjectInputStream(
 				new FileInputStream("." + File.separator + "elementos" + File.separator + nome));
-		Elemento elemento = (Elemento) objectInput.readObject();
+		Object elemento = objectInput.readObject();
+		return elemento;
+	}
+	
+	public static Object desserializarObjeto(String nomeArquivo, String nomeDiretorio) throws FileNotFoundException, IOException, ClassNotFoundException {
+		ObjectInputStream objectInput = new ObjectInputStream(
+				new FileInputStream("." + File.separator + nomeDiretorio + File.separator + nomeArquivo));
+		Object elemento = objectInput.readObject();
 		return elemento;
 	}
 	
