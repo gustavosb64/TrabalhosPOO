@@ -11,12 +11,13 @@ class Casa(Predio):
         strComodos = str(self.nComodos)
         strChuveiros = str(self.nChuveiros)
 
-        string = super().__str__()
+        string = "CASA\n"
+        string = string+super().__str__()
         string = string+"\nnComodos: "+strComodos+"\n"
         string = string+"nComodos: "+strChuveiros
 
         return string
-    
+
     def getNComodos(self):
         return self.nComodos
 

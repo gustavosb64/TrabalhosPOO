@@ -9,8 +9,9 @@ class Escola(Predio):
     def __str__(self):
         strSalas = str(self.nSalas)
 
-        string = super().__str__()
-        string = string+"\nnSalas: "+strSalas+"\n"
+        string = "ESCOLA\n"
+        string += super().__str__()
+        string += "\nnSalas: "+strSalas+"\n"
 
         return string
     

@@ -1,4 +1,6 @@
-class Bicicleta:
+from interfacePegadaDeCarbono import *
+
+class Bicicleta(PegadaDeCarbono):
 
     def __init__(self, marca, aro, calibragem):
         self.marca = marca;
@@ -6,7 +8,8 @@ class Bicicleta:
         self.calibragem = calibragem;
 
     def __str__(self):
-        string = "Marca: "+self.marca+"\nAro: "+str(self.aro)+"\nCalibragem: "+str(self.calibragem)
+        string = "BICICLETA\n"
+        string += "Marca: "+self.marca+"\nAro: "+str(self.aro)+"\nCalibragem: "+str(self.calibragem)
         return string
 
     def getMarca(self):
