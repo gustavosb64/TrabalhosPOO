@@ -46,7 +46,6 @@ class Estoque:
 
         return None
 
-
     def RetirarProduto(self, produto):
 
         def ConsultaProdutoInterno(codigo):
@@ -87,8 +86,6 @@ class Estoque:
 
         print("Produto inválido!")
         return
-
-
 
     def CustoTotal(self):
 

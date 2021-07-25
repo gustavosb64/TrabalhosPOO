@@ -8,6 +8,7 @@ class Produto(ABC):
         self._descricao = descricao
         self._qtdEstoque = qtdEstoque
 
+    @abstractmethod
     def __str__(self):
         string = "Produto: "+str(self._codigo)+", "+self._descricao+", custo de R$"+str(self._precoUnitario)+", quantidade "+str(self._qtdEstoque)
         return string

@@ -33,8 +33,8 @@ class ProdutoPerecivel(Produto):
             estoqueAtual = super().getEstoque()
             super().retiraEstoque(estoqueAtual)
             return 0
-    def acrescentaEstoque(self, qtd_acrescimo):
 
+    def acrescentaEstoque(self, qtd_acrescimo):
         estoqueAtual = super().getEstoque()
         if estoqueAtual == 0:
             super().acrescentaEstoque(qtd_acrescimo)
