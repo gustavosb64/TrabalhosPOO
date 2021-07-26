@@ -44,15 +44,30 @@ public enum Keys {
 		public Key obterTecla() {
 			return new KeyR();
 		}
-	}, VK_S(KeyEvent.VK_S) {
-		@Override
-		public Key obterTecla() {
-			return new KeyS();
-		}
 	}, VK_L(KeyEvent.VK_L) {
 		@Override
 		public Key obterTecla() {
 			return new KeyL();
+		}
+	}, VK_S(KeyEvent.VK_S) {
+		@Override
+		public Key obterTecla() {
+			return new KeySDown();
+		}
+	}, VK_W(KeyEvent.VK_W) {
+		@Override
+		public Key obterTecla() {
+			return new KeyW();
+		}
+	}, VK_A(KeyEvent.VK_A) {
+		@Override
+		public Key obterTecla() {
+			return new KeyA();
+		}
+	}, VK_D(KeyEvent.VK_D) {
+		@Override
+		public Key obterTecla() {
+			return new KeyD();
 		}
 	};
 

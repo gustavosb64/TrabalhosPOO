@@ -7,13 +7,13 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import Controler.Tela;
+import Modelo.Animado;
 import Modelo.Elemento;
-import Modelo.Hero;
 
 public class KeyS implements Key {
 
 	@Override
-	public void pressed(ArrayList<Elemento> eElementos, Hero heroi, Tela tela) {
+	public void pressed(ArrayList<Elemento> eElementos, Animado heroi, Tela tela) {
 		try {
 			ObjectOutputStream objectOutput = new ObjectOutputStream(
 					new FileOutputStream("." + File.separator + "save" + File.separator + "save.zip"));

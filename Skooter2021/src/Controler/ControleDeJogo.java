@@ -8,6 +8,7 @@ import Modelo.Animado;
 import Modelo.Elemento;
 import Modelo.Fruta;
 import Modelo.Hero;
+import Modelo.Hero2;
 
 public class ControleDeJogo {
 	
@@ -20,6 +21,7 @@ public class ControleDeJogo {
 
 	public void processaTudo(ArrayList<Elemento> e) {
 		Hero hHero = (Hero) e.get(0); /* O heroi (protagonista) eh sempre o primeiro do array */
+		Hero2 hHero2 = (Hero2) e.get(1);
 		Elemento eTemp;
 		boolean temFruta = false;
 
@@ -29,6 +31,18 @@ public class ControleDeJogo {
 			
 			/* Verifica se o heroi se sobrepoe ao i-ésimo elemento */
 			if (hHero.getPosicao().estaNaMesmaPosicao(eTemp.getPosicao())) {
+				if (eTemp.isbTransponivel() == true) {
+					eTemp.contatoTransponivel(e);
+				}
+			}
+		}
+		
+		/* Processa todos os demais em relacao ao heroi */
+		for (int i = 2; i < e.size(); i++) {
+			eTemp = e.get(i); /* Pega o i-esimo elemento do jogo */
+			
+			/* Verifica se o heroi se sobrepoe ao i-ésimo elemento */
+			if (hHero2.getPosicao().estaNaMesmaPosicao(eTemp.getPosicao())) {
 				if (eTemp.isbTransponivel() == true) {
 					eTemp.contatoTransponivel(e);
 				}
@@ -60,12 +74,28 @@ public class ControleDeJogo {
 				} else return true;
 			} else return false;
 		}
+		
+		 //Caso o eTemp seja um bloco móvel:
+		if (eTemp.isMovel() == true) {
+			if (eTemp.contactHero((Animado) e.get(1), e)) {
+				if (!ehPosicaoValida(e, eTemp.getPosicao(), i)) {
+					eTemp.voltaAUltimaPosicao();
+					return false;
+				} else return true;
+			} else return false;
+		}
 
         //Caso eTemp seja um robô:
 		if (eTemp.getClass().getSimpleName().equals("Robo")) {
 			eTemp.contactHero((Animado) e.get(0), e);
 			return true;
 		}
+		
+		  //Caso eTemp seja um robô:
+				if (eTemp.getClass().getSimpleName().equals("Robo")) {
+					eTemp.contactHero((Animado) e.get(1), e);
+					return true;
+				}
         
         return false;
     }
@@ -74,9 +104,14 @@ public class ControleDeJogo {
 	private boolean ehPosicaoValidaRobo(ArrayList<Elemento> e, Animado robo, int eTempIndex) {
 
         //Caso não seja o heroi, não faz nada
-        if (eTempIndex != 0) return true;
+        if (eTempIndex != 0 && eTempIndex != 1) return true;
 
-		robo.contactHero((Animado) e.get(0), e);
+        	if(eTempIndex == 0) {
+        		robo.contactHero((Animado) e.get(0), e);
+        	}else {
+        		robo.contactHero((Animado) e.get(1), e);
+        	}
+        		
 
         return true;
     }
@@ -92,6 +127,7 @@ public class ControleDeJogo {
 
                         //Caso quem tenha chamado a função seja o heroi:
     				    if (index == 0) return ehPosicaoValidaHeroi(e, eTemp, i);
+    				    else if (index == 1) return ehPosicaoValidaHeroi(e, eTemp, i);
                         else return false;
 
 				    }

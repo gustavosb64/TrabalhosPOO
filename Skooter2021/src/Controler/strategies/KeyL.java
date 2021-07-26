@@ -7,13 +7,14 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 import Controler.Tela;
+import Modelo.Animado;
 import Modelo.Elemento;
 import Modelo.Hero;
 
 public class KeyL implements Key {
 
 	@Override
-	public void pressed(ArrayList<Elemento> eElementos, Hero heroi, Tela tela) {
+	public void pressed(ArrayList<Elemento> eElementos, Animado heroi, Tela tela) {
 		try {
 			ObjectInputStream objectInput = new ObjectInputStream(new FileInputStream("."+File.separator+"save"+File.separator+"save.zip"));
 			tela.setElementos((ArrayList<Elemento>) objectInput.readObject());

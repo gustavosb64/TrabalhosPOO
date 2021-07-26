@@ -14,11 +14,11 @@ import Auxiliar.Consts;
 import Auxiliar.Posicao;
 
 @SuppressWarnings("serial")
-public class Hero extends Animado implements Serializable {
+public class Hero2 extends Animado implements Serializable {
     private int iVidas;
-    private static Hero heroi;
+    private static Hero2 heroi;
 
-	public Hero(String sNomeImagePNG) {
+	public Hero2(String sNomeImagePNG) {
 		super(sNomeImagePNG);
         this.iVidas = 2;
 	}

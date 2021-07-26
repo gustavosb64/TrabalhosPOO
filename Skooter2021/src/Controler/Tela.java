@@ -11,7 +11,6 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -30,8 +29,10 @@ import Auxiliar.Desenhador;
 import Auxiliar.SerializaDesserializaArquivos;
 import Controler.strategies.Key;
 import Controler.strategies.Keys;
+import Modelo.Animado;
 import Modelo.Elemento;
 import Modelo.Hero;
+import Modelo.Hero2;
 
 @SuppressWarnings("serial")
 public class Tela extends javax.swing.JFrame implements KeyListener, MouseListener {
@@ -44,7 +45,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 	private int vidasHeroi;
 
 	public Tela() throws Exception {
-		this.faseAtual = 3;
+		this.faseAtual = 0;
 		this.vidasHeroi = 2;
 
 		File caminhoMusica = new File("." + File.separator + "music" + File.separator + "ost.wav");
@@ -130,7 +131,7 @@ public class Tela extends javax.swing.JFrame implements KeyListener, MouseListen
 	    String tempoSave = myReader.nextLine();
 		Timer saveTimer = new Timer();
 		AutoSave autoSave = new AutoSave();
-		saveTimer.schedule(autoSave, new Date(), Integer.parseInt(tempoSave));
+		//saveTimer.schedule(autoSave, new Date(), Integer.parseInt(tempoSave));
 
 		TimerTask redesenhar = new TimerTask() {
 			public void run() {

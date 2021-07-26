@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import Controler.Tela;
 import Modelo.Animado;
 import Modelo.Elemento;
+import Modelo.Hero2;
 
-public class KeyR implements Key {
+public class KeyW implements Key{
 
 	@Override
 	public void pressed(ArrayList<Elemento> eElementos, Animado heroi, Tela tela) {
-		tela.setFase();
+		((Hero2)eElementos.get(1)).moveUp();
+		((Hero2)eElementos.get(1)).setImage("skooter_hero_up.png");
 	}
-
+	
 }

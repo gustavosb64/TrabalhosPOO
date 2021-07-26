@@ -12,6 +12,7 @@ import Modelo.Coracao;
 import Modelo.Elemento;
 import Modelo.Fruta;
 import Modelo.Hero;
+import Modelo.Hero2;
 import Modelo.Orientacao;
 import Modelo.Robo;
 import Modelo.Seta;
@@ -21,14 +22,15 @@ public class Fase extends ArrayList<Elemento> implements Serializable {
 	private static final long serialVersionUID = -3265424110410076503L;
 
 	public Fase CriaFase1() {
-		Hero hero = Hero.getHero();
+		Hero hero = new Hero("skooter_hero_down.png");
 		hero.setPosicao(6, 4);
 		this.add(hero);
+		
+		Hero2 hero2 = new Hero2("skooter_hero_down.png");
+		hero2.setPosicao(3, 4);
+		this.add(hero2);
 
-		criaFruta(0, 0, "fruta_banana.png");
-		criaFruta(10, 10, "fruta_banana.png");
-		criaFruta(0, 10, "fruta_morango.png");
-		criaFruta(10, 0, "fruta_morango.png");
+		
 
 		for (int i = 1; i < 10; i += 2) {
 			for (int j = 1; j < 10; j += 2) {
@@ -64,15 +66,24 @@ public class Fase extends ArrayList<Elemento> implements Serializable {
 		criaRobo(10, 1, "robo_azul.png");
 		criaRobo(2, 6, "robo_azul.png");
 		criaRobo(8, 10, "robo_azul.png");
+		
+		criaFruta(0, 0, "fruta_banana.png");
+		criaFruta(10, 10, "fruta_banana.png");
+		criaFruta(0, 10, "fruta_morango.png");
+		criaFruta(10, 0, "fruta_morango.png");
 
 		return this;
 	}
 
 	public Fase CriaFase2() {
 
-		Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
-		hHero.setPosicao(0, 7);
-		this.add(hHero);
+		Hero hero = new Hero("skooter_hero_down"); /* https://www.online-image-editor.com/ */
+		hero.setPosicao(0, 7);
+		this.add(hero);
+		
+		Hero2 hero2 = new Hero2("skooter_hero_down.png");
+		hero2.setPosicao(3, 4);
+		this.add(hero2);
 
 		criaFruta(1, 5, "fruta_banana.png");
 		criaFruta(9, 5, "fruta_morango.png");
@@ -132,9 +143,13 @@ public class Fase extends ArrayList<Elemento> implements Serializable {
 
 	public Fase CriaFase3() {
 
-		Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
-		hHero.setPosicao(5, 5);
-		this.add(hHero);
+		Hero hero = new Hero("skooter_hero_down"); /* https://www.online-image-editor.com/ */
+		hero.setPosicao(5, 5);
+		this.add(hero);
+		
+		Hero2 hero2 = new Hero2("skooter_hero_down.png");
+		hero2.setPosicao(3, 4);
+		this.add(hero2);
 
 		criaFruta(5, 0, "fruta_banana.png");
 		criaFruta(5, 2, "fruta_banana.png");
@@ -181,9 +196,13 @@ public class Fase extends ArrayList<Elemento> implements Serializable {
 
 	public Fase CriaFase4() {
 
-		Hero hHero = Hero.getHero(); /* https://www.online-image-editor.com/ */
-		hHero.setPosicao(4, 5);
-		this.add(hHero);
+		Hero hero = new Hero("skooter_hero_down"); /* https://www.online-image-editor.com/ */
+		hero.setPosicao(4, 5);
+		this.add(hero);
+		
+		Hero2 hero2 = new Hero2("skooter_hero_down.png");
+		hero2.setPosicao(3, 4);
+		this.add(hero2);
 		
 		criaBlocoVermelhoLiso(0, 3);
 		criaBlocoVermelhoLiso(0, 7);
