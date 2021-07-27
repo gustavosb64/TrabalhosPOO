@@ -31,7 +31,7 @@ public class SerializaDesserializaArquivos implements Serializable{
 		serializarObjeto(new BlocoBase("bloco_vermelho_liso.png"), "bloco_vermelho_liso");
 		serializarObjeto(new BlocoMovelDecoration("bloco_vermelho_prisma.png", new BlocoBase("bloco_vermelho_prisma.png")), "bloco_vermelho_prisma");
 		serializarObjeto(new BlocoDestrutivelDecoration("bloco_verde_liso.png", new BlocoBase("bloco_verde_liso.png")), "bloco_verde_liso");
-		serializarObjeto(new BlocoDestrutivelDecoration(null, new BlocoMovelDecoration("bloco_verde_prisma.png", new BlocoBase("bloco_verde_prisma.png"))), "bloco_verde_prisma");
+		serializarObjeto(new BlocoDestrutivelDecoration("bloco_verde.png", new BlocoMovelDecoration(null, new BlocoBase(null))), "bloco_verde");
 		
 		serializarObjeto(new Robo("robo_amarelo.png"), "robo_amarelo");
 		serializarObjeto(new Robo("robo_azul.png"), "robo_azul");

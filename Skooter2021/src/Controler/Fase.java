@@ -7,7 +7,6 @@ import Modelo.Bloco;
 import Modelo.BlocoBase;
 import Modelo.BlocoDestrutivelDecoration;
 import Modelo.BlocoMovelDecoration;
-import Modelo.BlocoVerdeLiso;
 import Modelo.Coracao;
 import Modelo.Elemento;
 import Modelo.Fruta;
@@ -202,7 +201,6 @@ public class Fase extends ArrayList<Elemento> implements Serializable {
 		criaBlocoVermelhoLiso(10, 1);
 
 		// Colocando blocos verdes lisos
-		BlocoVerdeLiso BVdL;
 		for (int i = 1; i < 10; i += 2) {
 			for (int j = 1; j < 10; j += 2) {
 				criaBlocoVerdeLiso(i, j);

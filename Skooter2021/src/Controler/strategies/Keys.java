@@ -61,6 +61,7 @@ public enum Keys {
 	Keys(int code){
 		this.code = code;
 	}
+	
 	public int getCode() {
 		return this.code;
 	}
