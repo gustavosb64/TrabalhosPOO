@@ -14,9 +14,8 @@ class Product
     @num_in_stock -= num_taken
 
     if @num_in_stock < 0
-      return_value = num_taken + @num_in_stock
+      num_taken += @num_in_stock
       @num_in_stock = 0
-      return return_value 
     end
 
     return num_taken

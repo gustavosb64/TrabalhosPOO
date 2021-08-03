@@ -24,9 +24,7 @@ class Stock
   def queryByCode(code)
     
     @stock_list.each do |p|
-      if p.code == code 
-        return p
-      end
+      return p if p.code == code
     end
 
     return nil
@@ -36,11 +34,8 @@ class Stock
 
     p = queryByCode(product.code)
 
-    if p == nil
-      return nil
-    end
+    @stock_list.delete(p) if p != nil
 
-    @stock_list.delete(p)
     return p
   end
 
@@ -49,8 +44,7 @@ class Stock
     total_price = 0
 
     @stock_list.each do |p|
-      puts p.price
-      #totalPrice += p.price
+      total_price += p.price 
     end
 
     puts "Total price is: #{total_price}"
